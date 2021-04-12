@@ -10,8 +10,8 @@ abijithj@iisc.ac.in
 
 # %% LOAD LIBRARIES
 import os
+import pickle
 import numpy as np
-import pandas as pd
 
 from tqdm import tqdm
 
@@ -31,30 +31,87 @@ plt.rcParams.update({
     "mathtext.fontset": "cm",
     "font.size": 11})
 
-os.makedirs('./results', exist_ok=True)
-path = './results/'
-
 # %% IMPORT DATA
 
-train_data = np.loadtxt('./data/P1c_train_data_2D.txt', delimiter=',', skiprows=1)
-test_data = np.loadtxt('./data/P1c_test_data_2D.txt', delimiter=',', skiprows=1)
+dataset = 'P1b'
+train_data = np.loadtxt('./data/'+dataset+'_train_data_2D.txt', delimiter=',', skiprows=1)
+test_data = np.loadtxt('./data/'+dataset+'_test_data_2D.txt', delimiter=',', skiprows=1)
 
 # %% TRAIN GMM
 
-priors, means, covs, cost = bayes_tools.train_gmm(train_data, num_components=2,
-    max_iter=200, tol=1e-12)
+os.makedirs('./models/ex1', exist_ok=True)
+path = './models/ex1/'
+
+# SET TRAINING PARAMETERS
+np.random.seed(34)
+
+num_samples = train_data.shape[0]
+training_size = num_samples
+force_train = True
+
+if os.path.isfile(path + 'model_GMM_EM_dataset_' + dataset + '_size_' + \
+    str(training_size) + '.pkl') and force_train==False:
+    
+    print('PICKING PRETRAINED MODEL')
+    
+    f = open(path + 'model_GMM_EM_dataset_' + dataset + '_size_' + \
+        str(training_size) + '.pkl', 'rb')
+    model = pickle.load(f)
+    f.close()
+
+else:
+    print('TRAINING IN PROGRESS...')
+
+    random_idx = np.random.randint(num_samples, size=training_size)
+
+    priors, means, covs, cost = bayes_tools.train_gmm(train_data[random_idx], num_components=2,
+        max_iter=200, tol=1e-12)
+
+    print('...TRAINING COMPLETE!')
+
+    model = {"means":means, "covs":covs, "priors":priors}
+    f = open(path + 'model_GMM_EM_dataset_' + dataset + '_size_' + str(training_size) + '.pkl', 'wb')
+    pickle.dump(model, f)
+    f.close()
 
 # %% PLOT
+
+os.makedirs('./results/ex1', exist_ok=True)
+path = './results/ex1/'
+
+# PLOT LIKELIHOOD AS LOSS
 fig = plt.figure(figsize=(12,6))
 ax = plt.gca()
-bayes_tools.plot_loss(cost, ax=ax, yaxis_label=r'$\ln f(\mathbf{x}; \boldsymbol{\mu}, \boldsymbol{\Sigma})$')
+
+save_res = path + 'loss_GMM_EM_dataset_' + dataset + '_size_' + str(training_size)
+
+bayes_tools.plot_loss(cost, ax=ax, \
+    yaxis_label=r'$\ln f(\mathbf{x}; \boldsymbol{\mu}, \boldsymbol{\Sigma})$',
+    save=save_res)
+
+# PLOT SAMPLES
+save_res = path + 'samples_GMM_EM_dataset_' + dataset + '_size_' + str(training_size)
 
 fig = plt.figure(figsize=(12,6))
 ax = plt.gca()
+
 bayes_tools.plot_data2D(train_data, ax=ax, xlimits=[-4,10],
     ylimits=[-4,10], show=False)
-bayes_tools.plot_confidence_ellipse2D(means[0], covs[0], nstd=3, ax=ax,
-    color='red', show=True)
-bayes_tools.plot_confidence_ellipse2D(means[1], covs[1], nstd=3, ax=ax,
-    color='green', show=True)
+bayes_tools.plot_confidence_ellipse2D(model["means"][0], model["covs"][0],
+    nstd=3, ax=ax, color='red')
+bayes_tools.plot_confidence_ellipse2D(model["means"][1], model["covs"][1],
+    nstd=3, ax=ax, color='green')
+bayes_tools.plot_boundary(model["means"], model["covs"],
+    model["priors"], ax=ax, num_points=500, show=True, save=save_res)
+
+# %% TESTING
+
+confusion_mtx = bayes_tools.test_gaussian_conditionals(test_data,
+    model["means"], model["covs"], model["priors"])
+
+# %% PLOT CONFUSION MATRIX
+
+save_res = path + 'conf_mtx_GMM_EM_dataset_' + dataset + '_size_' + str(training_size)
+
+bayes_tools.plot_confusion_matrix(confusion_mtx, show=True, save=save_res)
 # %%

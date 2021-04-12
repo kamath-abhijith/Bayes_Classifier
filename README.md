@@ -4,6 +4,7 @@ Bayes' Classifier is an optimal multiclass supervised classification method. Rep
 
 - Two-class classification on toy-Gaussian data in 2D trained using MLE with Gaussian distributed data,
 - Two-class classification on toy-Gaussian data in 2D trained using EM with Gaussian Mixture Model,
+- Two-class classification on toy-Gaussian data in 20D trained using MLE with Gaussian distributed data,
 
 ## Documentation
 
