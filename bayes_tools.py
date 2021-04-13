@@ -21,6 +21,33 @@ from matplotlib.patches import Ellipse
 
 # %% PLOTTING
 
+def plot_data1D(data, ax=None, title_text=None,
+    xlimits=[-5,5], show=True, save=False):
+    ''' Plots 1D data with labels '''
+    if ax is None:
+        fig = plt.figure(figsize=(12,6))
+        ax = plt.gca()
+
+    labels = data[:,1]
+    pos_samples = data[np.where(labels==1)][:,:1]
+    neg_samples = data[np.where(labels==-1)][:,:1]
+
+    plt.scatter(pos_samples, np.zeros(len(pos_samples)), color='red')
+    plt.scatter(neg_samples, np.zeros(len(neg_samples)), color='green')
+
+    plt.xlabel(r'$x$')
+    plt.title(title_text)
+
+    plt.ylim([-0.1,1.1])
+    plt.xlim(xlimits)
+
+    if show:
+        plt.show()
+        if save:
+            plt.savefig(save + '.pdf', format='pdf')
+
+    return
+
 def plot_data2D(data, ax=None, title_text=None,
     xlimits=[-4,10], ylimits=[-4,10], show=True, save=False):
     ''' Plots 2D data with labels '''
@@ -49,7 +76,28 @@ def plot_data2D(data, ax=None, title_text=None,
 
     return
 
-def plot_confidence_ellipse2D(mean, cov, nstd=3, ax=None, color='black', 
+def plot_gaussian(mean, var, ax=None, colour='black',
+    line_width=1, xlimits=[-5,5], ylimits=[-.1,1.], show=True):
+    ''' Plots Gaussian with mean and variance '''
+    if ax is None:
+        fig = plt.figure(figsize=(12,6))
+        ax = plt.gca()
+
+    x = np.linspace(xlimits[0], xlimits[1])
+    gaussian = multivariate_normal.pdf(x, mean, var)
+
+    plt.plot(x, gaussian, '--', color=colour, linewidth=line_width)
+    plt.plot(x, np.zeros(len(x)), color='k', linewidth=2)
+    
+    plt.xlim(xlimits)
+    plt.ylim(ylimits)
+
+    if show:
+        plt.show()
+
+    return
+
+def plot_confidence_ellipse2D(mean, cov, nstd=3, ax=None, colour='black', 
     line_width=2, show=True):
     ''' Plots confidence ellipse for Gaussian data '''
     if ax is None:
@@ -59,7 +107,7 @@ def plot_confidence_ellipse2D(mean, cov, nstd=3, ax=None, color='black',
     height, width = nstd*np.sqrt(np.linalg.eig(cov)[0])
     ellipse = Ellipse(xy=(mean[0], mean[1]), width=width, height=height,
         angle=-180.0*np.arctan((width-cov[0,0])/cov[1,0])/np.pi, linewidth=line_width,
-        facecolor='blue', alpha=0.2, edgecolor=color)
+        facecolor='blue', alpha=0.2, edgecolor=colour)
     
     if show:
         ax.add_patch(ellipse)
@@ -102,7 +150,30 @@ def plot_loss(loss, ax=None, xaxis_label=r'NUMBER OF ITERATIONS',
 
     return
 
-def plot_boundary(means, covs, priors, ax=None, colour='black',
+def plot_decisionboundary1D(means, covs, priors, ax=None, colour='black',
+    xlimits=[-5,5], num_points=100, line_width=2, show=True, save=False):
+    '''
+    Plots the decision boundary for Bayes classifier
+    with Gaussian class conditionals
+
+    '''
+    if ax is None:
+        fig = plt.figure(figsize=(12,6))
+        ax = plt.gca()
+
+    xx = np.linspace(xlimits[0], xlimits[1], num_points)
+    data_grid = np.c_[xx.ravel()]
+    yy = predict_gaussian_conditionals(data_grid, means, covs, priors)
+
+    plt.plot(xx, yy, '-', linewidth=line_width, color=colour)
+    if show:
+        if save:
+            plt.savefig(save + '.pdf', format='pdf')
+        plt.show()
+
+    return
+
+def plot_decisionboundary2D(means, covs, priors, ax=None, colour='black',
     xlimits=[-4,10], ylimits=[-4,10], num_points=100, line_width=2,
     show=True, save=False):
     '''
@@ -176,6 +247,31 @@ def score_gaussian_conditionals(x, mu, sigma, prior):
     return -(np.log(prior) - (1.0/2.0)*np.log(np.linalg.det(pres)) - \
          (1.0/2.0)*(x-mu).T @ pres @ (x-mu)).flatten()[0]
 
+def predict_gaussian_conditionals(data, mean, cov, prior):
+    '''
+    Predicts labels for class classifier with
+    Gaussian class conditionals =
+
+    :param data: test data
+    :param mean: class mean
+    :param cov: class covariance
+    :param prior: class prior
+
+    :return: predicted labels
+
+    '''
+
+    num_samples = data.shape[0]
+    num_classes = len(mean)
+
+    score = np.zeros((num_samples, num_classes))
+    for i in range(num_samples):
+        for classes in range(num_classes):
+            score[i, classes] = (score_gaussian_conditionals(data[i,:],
+                mean[classes], cov[classes], prior[classes]))
+
+    return np.argmax(score, axis=1)
+
 def gmm_estep(data, prior, mean, cov):
     '''
     Runs E-step for GMMs
@@ -230,8 +326,8 @@ def gmm_mstep(data, gamma):
             means[k] += gamma[i, k] * data[i]
         means[k] /= den
         for i in range(num_samples):
-            left = np.reshape((data[i] - means[k]), (2,1))
-            right = np.reshape((data[i] - means[k]), (1,2))
+            left = np.reshape((data[i] - means[k]), (dim,1))
+            right = np.reshape((data[i] - means[k]), (1,dim))
             covs[k] += gamma[i,k] * left * right
         covs[k] /= den
         priors[k] = den/num_samples
@@ -250,9 +346,9 @@ def train_gaussian_conditionals(data):
 
     '''
 
-    dim = data.shape[1]
-    
+    dim = data.shape[1] 
     labels = data[:,dim-1]
+    
     pos_samples = data[np.where(labels==1)][:,:dim-1]
     num_pos_samples = pos_samples.shape[0]
 
@@ -303,31 +399,6 @@ def test_gaussian_conditionals(data, mean, cov, prior):
             confusion_mtx[i,j] = sum((true_labels==i) & (predicted_labels==j))
 
     return num_classes*confusion_mtx/num_samples
-
-def predict_gaussian_conditionals(data, mean, cov, prior):
-    '''
-    Predicts labels for class classifier with
-    Gaussian class conditionals =
-
-    :param data: test data
-    :param mean: class mean
-    :param cov: class covariance
-    :param prior: class prior
-
-    :return: predicted labels
-
-    '''
-
-    num_samples = data.shape[0]
-    num_classes = len(mean)
-
-    score = np.zeros((num_samples, num_classes))
-    for i in range(num_samples):
-        for classes in range(num_classes):
-            score[i, classes] = (score_gaussian_conditionals(data[i,:],
-                mean[classes], cov[classes], prior[classes]))
-
-    return np.argmax(score, axis=1)
 
 def train_gmm(data, num_components, max_iter=100, tol=1e-3):
     '''

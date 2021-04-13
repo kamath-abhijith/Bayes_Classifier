@@ -87,10 +87,10 @@ ax = plt.gca()
 bayes_tools.plot_data2D(train_data, ax=ax, xlimits=[-4,10],
     ylimits=[-4,10], show=False)
 bayes_tools.plot_confidence_ellipse2D(model["means"][0], model["covs"][0],
-    nstd=3, ax=ax, color='red')
+    nstd=3, ax=ax, colour='red')
 bayes_tools.plot_confidence_ellipse2D(model["means"][1], model["covs"][1],
-    nstd=3, ax=ax, color='green')
-bayes_tools.plot_boundary(model["means"], model["covs"],
+    nstd=3, ax=ax, colour='green')
+bayes_tools.plot_decisionboundary2D(model["means"], model["covs"],
     model["priors"], ax=ax, num_points=500, show=True, save=save_res)
 
 # %% TESTING
