@@ -28,18 +28,19 @@ plt.rcParams.update({
     "font.family": "serif",
     "font.serif": ["cm"],
     "mathtext.fontset": "cm",
-    "font.size": 11})
+    "font.size": 24})
 
 # %% IMPORT DATA
 
-dataset = 'P1b'
+dataset = 'P1a'
 train_data = np.loadtxt('./data/'+dataset+'_train_data_2D.txt', delimiter=',', skiprows=1)
 test_data = np.loadtxt('./data/'+dataset+'_test_data_2D.txt', delimiter=',', skiprows=1)
 
 # %% TESTING
 
+np.random.seed(34)
 num_samples = train_data.shape[0]
-training_size = 75
+training_size = num_samples
 random_idx = np.random.randint(num_samples, size=training_size)
 
 order = 1
@@ -55,3 +56,4 @@ path = './results/ex1/'
 save_res = path + 'conf_mtx_KNN_dataset_' + dataset + '_size_' + str(training_size)
 
 bayes_tools.plot_confusion_matrix(confusion_mtx, save=save_res)
+# %%

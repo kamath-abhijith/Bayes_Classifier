@@ -115,7 +115,7 @@ def plot_confidence_ellipse2D(mean, cov, nstd=3, ax=None, colour='black',
     return
 
 def plot_confusion_matrix(data, ax=None, xaxis_label=r'PREDICTED CLASS',
-    yaxis_label=r'TRUE CLASS', show=True, save=False):
+    yaxis_label=r'TRUE CLASS', title_text=None, show=True, save=False):
     ''' Plots confusion matrix '''
     if ax is None:
         fig = plt.figure(figsize=(6,6))
@@ -125,6 +125,7 @@ def plot_confusion_matrix(data, ax=None, xaxis_label=r'PREDICTED CLASS',
     # ax.invert_yaxis()
     plt.xlabel(xaxis_label)
     plt.ylabel(yaxis_label)
+    plt.title(title_text)
     if show:
         if save:
             plt.savefig(save + '.pdf', format='pdf')

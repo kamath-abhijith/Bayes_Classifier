@@ -90,6 +90,32 @@ where $\bW_{i} = \bSigma_i^{-1}\bmu_i$ and $\displaystyle w_{i} = \frac{1}{2} \b
 
 To implement this classifier, the means $\bmu_{i}$ and the covariances $\bSigma_{i}$ are to be estimated from the training data. The maximum likelihood estimators (MLE) for the mean and the covariance, given training samples $\{\bx^{(i)}, y^{(i)}\}_{i=1}^n$ are given by the sample mean and the sample covariance.
 
+\begin{figure}[!htbp]
+\centering
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.25in]{../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_10.pdf}
+       \caption{.}
+       \label{fig:QDA_P1a_10}
+    \end{subfigure}
+\quad
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.25in]{../results/ex1/conf_mtx_KNN_dataset_P1a_size_10.pdf}
+       \caption{Recovery in time domain.}
+       \label{fig:KNN_P1a_10}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.25in]{../results/ex1/conf_mtx_KNN_dataset_P1a_size_10.pdf}
+       \caption{Recovery in time domain.}
+       \label{fig:KNN_P1a_10}
+    \end{subfigure}
+
+\caption{Bayes classifier and nearest neighbour.}
+\end{figure}
+
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 \problem{Problem (1.2) Bayes' Classifier Trained using Gaussian Mixture Model}

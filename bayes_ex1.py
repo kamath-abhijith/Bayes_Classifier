@@ -30,7 +30,7 @@ plt.rcParams.update({
     "font.family": "serif",
     "font.serif": ["cm"],
     "mathtext.fontset": "cm",
-    "font.size": 11})
+    "font.size": 24})
 
 # %% IMPORT DATA
 
@@ -47,8 +47,8 @@ path = './models/ex1/'
 np.random.seed(34)
 
 num_samples = train_data.shape[0]
-training_size = 75
-force_train = True
+training_size = num_samples
+force_train = False
 
 if os.path.isfile(path + 'model_QD_ML_dataset_' + dataset + '_size_' + \
     str(training_size) + '.pkl') and force_train==False:
@@ -84,8 +84,8 @@ save_res = path + 'samples_QD_ML_dataset_' + dataset + '_size_' + str(training_s
 plt.figure(figsize=(8,8))
 ax = plt.gca()
 
-bayes_tools.plot_data2D(train_data, ax=ax, xlimits=[-4,10],
-    ylimits=[-4,10], show=False)
+bayes_tools.plot_data2D(train_data, ax=ax, xlimits=[-4,10], ylimits=[-4,10],
+    show=False)
 bayes_tools.plot_confidence_ellipse2D(model["means"][0], model["covs"][0],
     nstd=3, ax=ax, colour='red')
 bayes_tools.plot_confidence_ellipse2D(model["means"][1], model["covs"][1],
