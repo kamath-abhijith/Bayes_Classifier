@@ -1,4 +1,4 @@
-\documentclass[a4 paper]{article}
+\documentclass[11pt, a4 paper]{article}
 % Set target color model to RGB
 \usepackage[inner=2.0cm,outer=2.0cm,top=2.5cm,bottom=2cm]{geometry}
 \usepackage{setspace}
@@ -28,13 +28,18 @@ pdfproducer={PDFLaTeX},%
 
 \newcommand{\by}{\mathbf{y}}
 \newcommand{\bx}{\mathbf{x}}
+\newcommand{\bX}{\mathbf{X}}
 \newcommand{\bW}{\mathbf{W}}
 \newcommand{\bA}{\mathbf{A}}
 \newcommand{\bF}{\mathbf{F}}
 \newcommand{\rr}{\mathbb{R}}
 \newcommand{\cc}{\mathbb{C}}
+\newcommand{\Ex}{\mathbb{E}}
 \newcommand{\TT}{\mathsf{T}}
 \newcommand{\HH}{\mathsf{H}}
+
+\newcommand{\bmu}{\boldsymbol{\mu}}
+\newcommand{\bSigma}{\boldsymbol{\Sigma}}
 
 \chapterfont{\fontfamily{lmss}\selectfont}
 \sectionfont{\fontfamily{lmss}\selectfont}
@@ -49,6 +54,22 @@ pdfproducer={PDFLaTeX},%
 \section*{Introduction}
 \label{sec:intro}
 
+Let patterns be in $\rr^d$ and consider the $2$-class classification problem -- given a pattern $\bx$, classify the pattern into a class with label $y$. In Bayesian classification theory, the training data $\{\bx^{(i)}, y^{(i)}\}_{i=1}^n$ is viewed to be i.i.d samples of the random vector $(\bX, Y)$. The training samples are used to model the joint distribution of the random vector $(\bX, Y)$.
+
+Let $\Pr(C_i) = p_i$ be the priors associated with the $i$th class, $i=-1,1$; and let $f_i(\bx) = p_{\bX\vert Y}(\bx \vert y=i)$ be the class-conditional densities. Using the Bayes' rule and the training data, the update on the probabilities of the classes as:
+\begin{equation}
+	q_i(\bx) = \Pr(y=i\vert \bX=\bx) = \frac{p_{\bX\vert Y}(\bx \vert y=i)\Pr(C_i)}{\sum_j p_{\bX\vert Y}(\bx \vert y=j)\Pr(C_j)} = \frac{f_i(\bx) p_i}{\sum_j f_j(\bx) p_j}, \; i=-1,1.
+\end{equation}
+The two-class Bayes classifier that equally penalises misclassification can now be defined as:
+\begin{equation}
+	h_B(\bx) = \begin{cases}
+		-1, &\; q_{-1}(\bx) > q_1(\bx), \\
+		1, &\; \mathrm{otherwise}.
+	\end{cases}
+\label{eq:bayesClassifier}
+\end{equation}
+The decision $q_0(\bx) > q_1(\bx) \implies p_0 f_0(\bx) > p_1 f_1(\bx)$, and each of the prior, class-conditional pairs describes the joint distribution of $(\bX, Y)$. Hence, this is a generative model. The set of points $\{\bx \vert q_0(\bx) = q_1(\bx)\}$ is called the decision boundary. The problem of implementing this classifier is to learn the class-conditional densities and the prior densities from the training data.
+
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 \section{Bayes' Classifier in $\rr^{2}$}
@@ -56,7 +77,18 @@ pdfproducer={PDFLaTeX},%
 
 \problem{Problem (1.1) Bayes' Classifier with Gaussian Class Conditionals}
 \label{prob:1.1}
+Let the class conditional distributions be modelled to be multivariate Gaussians. In the training phase, the unknown means and covariances of the Gaussians are estimated from the training data. Let the class conditional densities be parametrised as:
+\begin{equation}
+	f_i(\bx; \bmu_i, \bSigma_i) = \frac{1}{(2\pi)^{(d/2)}(\det \bSigma_i)^{1/2}} e^{(\bx_i - \bmu_i)^\TT \bSigma_i^{-1} (\bx_i - \bmu_i)}, \; i=-1,1.
+\end{equation}
+The resulting Bayes classifier, using (\ref{eq:bayesClassifier}) results in a quadratic decision boundary as:
+\begin{equation}
+	\frac{1}{2}\bx^\TT\left( \bSigma_1^{-1} - \bSigma_{-1}^{-1} \right)\bx - (\bW_{1} - \bW_{-1})^{\TT}\bx + w_{1}-w_{-1} = 0,
+\label{eq:QDA}
+\end{equation}
+where $\bW_{i} = \bSigma_i^{-1}\bmu_i$ and $\displaystyle w_{i} = \frac{1}{2} \bmu_i^\TT \bSigma_i^{-1} \bmu_i - \ln \left( p_{i} \right) + \frac{1}{2}\ln \left( \det \bSigma_i \right)$. The quantities $\frac{1}{2}\bx^\TT \bSigma_i^{-1} \bx - \bW_{i}^{\TT}\bx + w_{i}$ are defined to be the score functions for class $i$, such that the multiclass extension of the $2$-class model picks the class with the least score.
 
+To implement this classifier, the means $\bmu_{i}$ and the covariances $\bSigma_{i}$ are to be estimated from the training data. The maximum likelihood estimators (MLE) for the mean and the covariance, given training samples $\{\bx^{(i)}, y^{(i)}\}_{i=1}^n$ are given by the sample mean and the sample covariance.
 
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
 

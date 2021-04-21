@@ -334,7 +334,7 @@ def gmm_mstep(data, gamma):
     
     return priors, means, covs
 
-# %% TRAINING AND TESTING
+# %% TRAINING
 
 def train_gaussian_conditionals(data):
     '''
@@ -364,6 +364,43 @@ def train_gaussian_conditionals(data):
     neg_cov = ((neg_samples-neg_mean).T).dot((neg_samples-neg_mean))/num_neg_samples
 
     return pos_mean, neg_mean, pos_cov, neg_cov
+
+def train_gmm(data, num_components, max_iter=100, tol=1e-3):
+    '''
+    Trains Gaussian Mixture Model using data
+
+    :param data: training data
+    :param num_components: number of Gaussian mixture components
+
+    :return: learnt priors, means, covariances
+
+    '''
+
+    num_samples, dim = data.shape
+
+    # Initialisation
+    means = np.random.randn(num_components, dim-1)
+    covs = np.zeros((num_components, dim-1, dim-1))
+    for k in range(num_components):
+        covs[k] = np.eye(dim-1, dim-1)
+    priors = np.ones(num_components)/num_components
+
+    cost = []
+    cost_prev = -99999
+    for iter in tqdm(range(max_iter)):
+
+        gamma = gmm_estep(data[:,:dim-1], priors, means, covs)
+        priors, means, covs = gmm_mstep(data[:,:dim-1], gamma)
+
+        cost_iter = gmm_loglikelihood(data[:,:dim-1], priors, means, covs)
+        cost.append(cost_iter)
+        if (abs(cost_iter - cost_prev)**2 < tol):
+            break
+        cost_prev = cost_iter
+
+    return priors, means, covs, cost
+
+# %% TRAINING
 
 def test_gaussian_conditionals(data, mean, cov, prior):
     '''
@@ -400,37 +437,35 @@ def test_gaussian_conditionals(data, mean, cov, prior):
 
     return num_classes*confusion_mtx/num_samples
 
-def train_gmm(data, num_components, max_iter=100, tol=1e-3):
+def test_knn(train_data, test_data, metric='euclidean', order=1):
     '''
-    Trains Gaussian Mixture Model using data
+    Returns conmfusion matrix for k-nearest-neighbour classifier
+    
+    :param train_data: training data
+    :param test_data: test data
+    :param metric: distance metric
+    :param order: order 'k' value
 
-    :param data: training data
-    :param num_components: number of Gaussian mixture components
-
-    :return: learnt priors, means, covariances
+    :return: class labels for test data
 
     '''
 
-    num_samples, dim = data.shape
+    num_samples, dim = test_data.shape
+    num_classes = len(np.unique(test_data[:,dim-1]))
+    true_labels = (test_data[:,dim-1]+1)/2                 # Change labels to 0-1
 
-    # Initialisation
-    means = np.random.randn(num_components, dim-1)
-    covs = np.zeros((num_components, dim-1, dim-1))
-    for k in range(num_components):
-        covs[k] = np.eye(dim-1, dim-1)
-    priors = np.ones(num_components)/num_components
+    predicted_labels = np.zeros(num_samples)
+    for sample in range(num_samples):
+        dists = np.linalg.norm(train_data[:,:dim-1]-test_data[sample,:dim-1], \
+            axis=1)
+        k_nearest = np.argpartition(dists, order)[:order]
+        k_labels = train_data[k_nearest][:,dim-1].astype(int)
+        k_labels = ((k_labels+1)/2).astype(int)            # Change labels to 0-1
+        predicted_labels[sample] = np.bincount(k_labels).argmax()
+ 
+    confusion_mtx = np.zeros((num_classes, num_classes))
+    for i in range(num_classes):
+        for j in range(num_classes):
+            confusion_mtx[i,j] = sum((true_labels==i) & (predicted_labels==j))
 
-    cost = []
-    cost_prev = -99999
-    for iter in tqdm(range(max_iter)):
-
-        gamma = gmm_estep(data[:,:dim-1], priors, means, covs)
-        priors, means, covs = gmm_mstep(data[:,:dim-1], gamma)
-
-        cost_iter = gmm_loglikelihood(data[:,:dim-1], priors, means, covs)
-        cost.append(cost_iter)
-        if (abs(cost_iter - cost_prev)**2 < tol):
-            break
-        cost_prev = cost_iter
-
-    return priors, means, covs, cost
+    return num_classes*confusion_mtx/num_samples
