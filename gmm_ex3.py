@@ -29,7 +29,7 @@ plt.rcParams.update({
     "font.family": "serif",
     "font.serif": ["cm"],
     "mathtext.fontset": "cm",
-    "font.size": 11})
+    "font.size": 24})
 
 # %% IMPORT DATA
 
@@ -47,7 +47,7 @@ np.random.seed(34)
 
 num_samples = train_data.shape[0]
 training_size = num_samples
-force_train = True
+force_train = False
 
 if os.path.isfile(path + 'model_GMM_EM_dataset_' + dataset + '_size_' + \
     str(training_size) + '.pkl') and force_train==False:
@@ -108,5 +108,16 @@ for classes in range(num_classes):
             model["covs"][classes][component], ax=ax, colour=colours[classes],
             xlimits=[-10,18], ylimits=[-.1,0.3], show=False)
 
+save_res = path + 'samples_GMM_EM_dataset_' + dataset + '_size_' + str(training_size)
+plt.savefig(save_res + '.pdf', format='pdf')
 
-# %%
+# %% TESTING
+
+confusion_mtx = bayes_tools.test_gmm(test_data,
+    model["means"], model["covs"], model["priors"])
+
+# %% PLOT CONFUSION MATRIX
+
+save_res = path + 'conf_mtx_GMM_dataset_' + dataset + '_size_' + str(training_size)
+
+bayes_tools.plot_confusion_matrix(confusion_mtx, save=save_res)

@@ -32,7 +32,7 @@ plt.rcParams.update({
 
 # %% IMPORT DATA
 
-dataset = 'P1a'
+dataset = 'P1c'
 train_data = np.loadtxt('./data/'+dataset+'_train_data_2D.txt', delimiter=',', skiprows=1)
 test_data = np.loadtxt('./data/'+dataset+'_test_data_2D.txt', delimiter=',', skiprows=1)
 
@@ -40,7 +40,7 @@ test_data = np.loadtxt('./data/'+dataset+'_test_data_2D.txt', delimiter=',', ski
 
 np.random.seed(34)
 num_samples = train_data.shape[0]
-training_size = num_samples
+training_size = 199
 random_idx = np.random.randint(num_samples, size=training_size)
 
 order = 1

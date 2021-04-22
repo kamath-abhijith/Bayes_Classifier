@@ -25,7 +25,7 @@ def plot_data1D(data, ax=None, title_text=None,
     xlimits=[-5,5], show=True, save=False):
     ''' Plots 1D data with labels '''
     if ax is None:
-        fig = plt.figure(figsize=(12,6))
+        fig = plt.figure(figsize=(8,8))
         ax = plt.gca()
 
     labels = data[:,1]
@@ -52,7 +52,7 @@ def plot_data2D(data, ax=None, title_text=None,
     xlimits=[-4,10], ylimits=[-4,10], show=True, save=False):
     ''' Plots 2D data with labels '''
     if ax is None:
-        fig = plt.figure(figsize=(12,6))
+        fig = plt.figure(figsize=(8,8))
         ax = plt.gca()
 
     labels = data[:,2]
@@ -80,7 +80,7 @@ def plot_gaussian(mean, var, ax=None, colour='black',
     line_width=1, xlimits=[-5,5], ylimits=[-.1,1.], show=True):
     ''' Plots Gaussian with mean and variance '''
     if ax is None:
-        fig = plt.figure(figsize=(12,6))
+        fig = plt.figure(figsize=(8,8))
         ax = plt.gca()
 
     x = np.linspace(xlimits[0], xlimits[1])
@@ -101,7 +101,7 @@ def plot_confidence_ellipse2D(mean, cov, nstd=3, ax=None, colour='black',
     line_width=2, show=True):
     ''' Plots confidence ellipse for Gaussian data '''
     if ax is None:
-        fig = plt.figure(figsize=(12,6))
+        fig = plt.figure(figsize=(8,8))
         ax = plt.gca()
 
     height, width = nstd*np.sqrt(np.linalg.eig(cov)[0])
@@ -118,7 +118,7 @@ def plot_confusion_matrix(data, ax=None, xaxis_label=r'PREDICTED CLASS',
     yaxis_label=r'TRUE CLASS', title_text=None, show=True, save=False):
     ''' Plots confusion matrix '''
     if ax is None:
-        fig = plt.figure(figsize=(6,6))
+        fig = plt.figure(figsize=(8,8))
         ax = plt.gca()
 
     ax = sns.heatmap(data, vmin=0.0, vmax=1.0, linewidths=0.5, annot=True)
@@ -138,7 +138,7 @@ def plot_loss(loss, ax=None, xaxis_label=r'NUMBER OF ITERATIONS',
     show=True, save=False):
     ''' Plots loss function vs iterations '''
     if ax is None:
-        fig = plt.figure(figsize=(12,6))
+        fig = plt.figure(figsize=(8,8))
         ax = plt.gca()
 
     plt.plot(loss, color=colour, linewidth=line_width)
@@ -159,7 +159,7 @@ def plot_decisionboundary1D(means, covs, priors, ax=None, colour='black',
 
     '''
     if ax is None:
-        fig = plt.figure(figsize=(12,6))
+        fig = plt.figure(figsize=(8,8))
         ax = plt.gca()
 
     xx = np.linspace(xlimits[0], xlimits[1], num_points)
@@ -183,7 +183,7 @@ def plot_decisionboundary2D(means, covs, priors, ax=None, colour='black',
 
     '''
     if ax is None:
-        fig = plt.figure(figsize=(12,6))
+        fig = plt.figure(figsize=(8,8))
         ax = plt.gca()
 
     xx, yy = np.meshgrid(np.linspace(xlimits[0], xlimits[1], num_points),\
@@ -231,7 +231,7 @@ def gmm_loglikelihood(data, priors, means, covs):
 
 def score_gaussian_conditionals(x, mu, sigma, prior):
     '''
-    Returns the score of the x belonging to class
+    Returns the score for x belonging to class
     with mean mu and covariance sigma
 
     :param x: test feature
@@ -247,6 +247,29 @@ def score_gaussian_conditionals(x, mu, sigma, prior):
 
     return -(np.log(prior) - (1.0/2.0)*np.log(np.linalg.det(pres)) - \
          (1.0/2.0)*(x-mu).T @ pres @ (x-mu)).flatten()[0]
+
+def score_gmm(x, means, covs, priors):
+    '''
+    Returns the score for x belonging to class
+    with Gaussians with means and covs
+
+    :param x: test feature
+    :param means: means of the Gaussians
+    :param covs: covariances of the Gaussians
+    :param priors: priors of the Gaussian mixtures
+
+    :return: score for the classes
+
+    '''
+
+    components, dim = means.shape
+
+    score = 0
+    for component in range(components):
+        score += priors[component]*multivariate_normal.pdf(x, \
+            means[component], covs[component])
+
+    return score
 
 def predict_gaussian_conditionals(data, mean, cov, prior):
     '''
@@ -343,11 +366,11 @@ def train_gaussian_conditionals(data):
     class conditionals
 
     :param data: training data
-    :return: learnt mean and covariance of classes
+    :return: learnt mean, covariance and priors of classes
 
     '''
 
-    dim = data.shape[1] 
+    num_samples, dim = data.shape 
     labels = data[:,dim-1]
     
     pos_samples = data[np.where(labels==1)][:,:dim-1]
@@ -355,6 +378,9 @@ def train_gaussian_conditionals(data):
 
     neg_samples = data[np.where(labels==-1)][:,:dim-1]
     num_neg_samples = neg_samples.shape[0]
+
+    pos_prior = num_pos_samples/num_samples
+    neg_prior = num_neg_samples/num_samples
 
     # Compute sample mean
     pos_mean = np.mean(pos_samples, axis=0)
@@ -364,7 +390,7 @@ def train_gaussian_conditionals(data):
     pos_cov = ((pos_samples-pos_mean).T).dot((pos_samples-pos_mean))/num_pos_samples
     neg_cov = ((neg_samples-neg_mean).T).dot((neg_samples-neg_mean))/num_neg_samples
 
-    return pos_mean, neg_mean, pos_cov, neg_cov
+    return pos_mean, neg_mean, pos_cov, neg_cov, pos_prior, neg_prior
 
 def train_gmm(data, num_components, max_iter=100, tol=1e-3):
     '''
@@ -401,7 +427,7 @@ def train_gmm(data, num_components, max_iter=100, tol=1e-3):
 
     return priors, means, covs, cost
 
-# %% TRAINING
+# %% TESTING
 
 def test_gaussian_conditionals(data, mean, cov, prior):
     '''
@@ -419,6 +445,7 @@ def test_gaussian_conditionals(data, mean, cov, prior):
 
     dim = data.shape[1]
     true_labels = (data[:,dim-1]+1)/2       # Change labels to 0-1
+
     
     num_samples = data[:,:dim-1].shape[0]
     num_classes = len(mean)
@@ -428,6 +455,41 @@ def test_gaussian_conditionals(data, mean, cov, prior):
         for classes in range(num_classes):
             score[i, classes] = (score_gaussian_conditionals(data[i,:dim-1],
                 mean[classes], cov[classes], prior[classes]))
+
+    predicted_labels = np.argmax(score, axis=1)
+
+    confusion_mtx = np.zeros((num_classes, num_classes))
+    for i in range(num_classes):
+        for j in range(num_classes):
+            confusion_mtx[i,j] = sum((true_labels==i) & (predicted_labels==j))
+
+    return num_classes*confusion_mtx/num_samples
+
+def test_gmm(data, means, covs, priors):
+    '''
+    Tests 2 class classifier with Gaussian
+    mixture class conditionals
+
+    :param data: test data
+    :param means: class means
+    :param covs: class covariances
+    :param priors: class priors
+
+    :return: accuracy for test data
+
+    '''
+
+    dim = data.shape[1]
+    true_labels = (data[:,dim-1]+1)/2       # Change labels to 0-1
+
+    num_samples = data[:,:dim-1].shape[0]
+    num_classes = len(means)
+
+    score = np.zeros((num_samples, num_classes))
+    for i in tqdm(range(num_samples)):
+        for classes in range(num_classes):
+            score[i, classes] = (score_gmm(data[i,:dim-1],
+                means[classes], covs[classes], priors[classes]))
 
     predicted_labels = np.argmax(score, axis=1)
 
