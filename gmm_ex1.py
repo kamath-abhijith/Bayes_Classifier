@@ -29,7 +29,7 @@ plt.rcParams.update({
     "font.family": "serif",
     "font.serif": ["cm"],
     "mathtext.fontset": "cm",
-    "font.size": 11})
+    "font.size": 24})
 
 # %% IMPORT DATA
 
@@ -43,7 +43,6 @@ os.makedirs('./models/ex1', exist_ok=True)
 path = './models/ex1/'
 
 # SET TRAINING PARAMETERS
-np.random.seed(34)
 
 num_samples = train_data.shape[0]
 training_size = num_samples
@@ -62,9 +61,7 @@ if os.path.isfile(path + 'model_GMM_EM_dataset_' + dataset + '_size_' + \
 else:
     print('TRAINING IN PROGRESS...')
 
-    random_idx = np.random.randint(num_samples, size=training_size)
-
-    priors, means, covs, cost = bayes_tools.train_gmm(train_data[random_idx], num_components=2,
+    priors, means, covs, cost = bayes_tools.train_gmm(train_data, num_components=2,
         max_iter=200, tol=1e-12)
 
     print('...TRAINING COMPLETE!')
@@ -80,7 +77,7 @@ os.makedirs('./results/ex1', exist_ok=True)
 path = './results/ex1/'
 
 # PLOT LIKELIHOOD AS LOSS
-fig = plt.figure(figsize=(12,6))
+fig = plt.figure(figsize=(8,8))
 ax = plt.gca()
 
 save_res = path + 'loss_GMM_EM_dataset_' + dataset + '_size_' + str(training_size)
@@ -92,7 +89,7 @@ bayes_tools.plot_loss(cost, ax=ax, \
 # PLOT SAMPLES
 save_res = path + 'samples_GMM_EM_dataset_' + dataset + '_size_' + str(training_size)
 
-fig = plt.figure(figsize=(12,6))
+fig = plt.figure(figsize=(8,8))
 ax = plt.gca()
 
 bayes_tools.plot_data2D(train_data, ax=ax, xlimits=[-4,10],

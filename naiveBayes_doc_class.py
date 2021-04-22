@@ -38,7 +38,15 @@ plt.rcParams.update({
     "font.family": "serif",
     "font.serif": ["cm"],
     "mathtext.fontset": "cm",
-    "font.size": 11})
+    "font.size": 24})
+
+# %% FUNCTION DEFINITIONS
+
+def fit_NBclassifier(trainset, trainlabel):
+    nbclassifier = MultinomialNB()
+    nbclassifier.fit(trainset, trainlabel)
+    
+    return nbclassifier
 
 # %% IMPORT DATA
 
@@ -47,8 +55,15 @@ data = pd.read_csv(r'data/sentiment_analysis.csv')
 corpus_train, corpus_test, label_train, label_test = train_test_split( \
     data['text'].to_list(), data['class'].to_list(), test_size=0.2)
 
-# vectorizer = CountVectorizer(tokenizer=str.split, stop_words=esw)
-vectorizer = TfidfVectorizer(tokenizer=str.split, stop_words=esw)
+method = 'tfidf'
+# method = 'bog'
+
+if method == 'tfidf':
+    vectorizer = TfidfVectorizer(tokenizer=str.split, stop_words=esw)
+
+elif method == 'bog':
+    vectorizer = CountVectorizer(tokenizer=str.split, stop_words=esw)
+
 corpus_train_mat = vectorizer.fit_transform(corpus_train)
 corpus_train_mat = corpus_train_mat.toarray()
 
@@ -58,29 +73,22 @@ corpus_test_mat = corpus_test_mat.toarray()
 
 # %% TRAIN
 
-def fit_NBclassifier(trainset, trainlabel):
-    nbclassifier = MultinomialNB()
-    nbclassifier.fit(trainset, trainlabel)
-    
-    return nbclassifier
-
 NB_clf = fit_NBclassifier(corpus_train_mat, label_train)
 label_predicted = NB_clf.predict(corpus_test_mat)
 accuracy = accuracy_score(label_test, label_predicted)
 
+# %% TEST
+
 conf_mat = confusion_matrix(label_test, label_predicted)*2/corpus_test_mat.shape[0]
 labels = sorted(set(label_predicted))
 
-bayes_tools.plot_confusion_matrix(conf_mat, save=None)
+# %% PLOT
 
-# plt.figure()
-# plt.title("Heat Map Confusion Matrix")
-# plt.imshow(conf_mat, interpolation="nearest", cmap=plt.cm.Reds)
-# plt.xticks(np.arange(len(labels)), labels)
-# plt.yticks(np.arange(len(labels)), labels)
-# plt.xlabel("Predicted Label")
-# plt.ylabel("True Label")
-# plt.colorbar()
-# plt.show()
+os.makedirs('./results/ex4', exist_ok=True)
+path = './results/ex4/'
+
+save_res = path + 'conf_mtx_' + method
+
+bayes_tools.plot_confusion_matrix(conf_mat, save=save_res)
 
 # %%

@@ -33,7 +33,7 @@ plt.rcParams.update({
 
 # %% IMPORT DATA
 
-dataset = 'P3a'
+dataset = 'P3b'
 train_data = np.loadtxt('./data/'+dataset+'_train_data.txt', skiprows=1)
 test_data = np.loadtxt('./data/'+dataset+'_test_data.txt', skiprows=1)
 
@@ -94,7 +94,7 @@ else:
 os.makedirs('./results/ex3', exist_ok=True)
 path = './results/ex3/'
 
-fig = plt.figure(figsize=(12,6))
+fig = plt.figure(figsize=(8,8))
 ax = plt.gca()
 colours = ['green', 'red']
 

@@ -30,7 +30,7 @@ plt.rcParams.update({
     "font.family": "serif",
     "font.serif": ["cm"],
     "mathtext.fontset": "cm",
-    "font.size": 11})
+    "font.size": 24})
 
 # %% IMPORT DATA
 
@@ -65,12 +65,12 @@ else:
 
     random_idx = np.random.randint(num_samples, size=training_size)
 
-    pos_mean, neg_mean, pos_cov, neg_cov = \
+    pos_mean, neg_mean, pos_cov, neg_cov, pos_prior, neg_prior = \
         bayes_tools.train_gaussian_conditionals(train_data[random_idx])
 
     print('...TRAINING COMPLETE!')
 
-    model = {"means":[pos_mean, neg_mean], "covs":[pos_cov, neg_cov], "priors":[0.5, 0.5]}
+    model = {"means":[pos_mean, neg_mean], "covs":[pos_cov, neg_cov], "priors":[pos_prior, neg_prior]}
     f = open(path + 'model_QD_ML_dataset_' + dataset + '_size_' + str(training_size) + '.pkl', 'wb')
     pickle.dump(model, f)
     f.close()
