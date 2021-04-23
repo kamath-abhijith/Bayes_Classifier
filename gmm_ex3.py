@@ -47,7 +47,7 @@ np.random.seed(34)
 
 num_samples = train_data.shape[0]
 training_size = num_samples
-force_train = False
+force_train = True
 
 if os.path.isfile(path + 'model_GMM_EM_dataset_' + dataset + '_size_' + \
     str(training_size) + '.pkl') and force_train==False:
@@ -71,6 +71,7 @@ else:
     means = np.zeros((num_classes, components, dim-1))
     covs = np.zeros((num_classes, components, dim-1, dim-1))
     priors = np.zeros((num_classes, components))
+    costs = {0: None, 1:None}
 
     for classes in range(num_classes):
 
@@ -78,9 +79,11 @@ else:
         num_data = data.shape[0]
 
         random_idx = np.random.randint(num_data, size=training_size)
-        priors[classes], means[classes], covs[classes], _ = \
+        priors[classes], means[classes], covs[classes], cost = \
             bayes_tools.train_gmm(data[random_idx], num_components=components,\
                 max_iter=200, tol=1e-36)
+
+        costs[classes] = cost
 
     print('...TRAINING COMPLETE!')
 

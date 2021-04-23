@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.20)  23 APR 2021 02:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.20)  23 APR 2021 18:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -472,6 +472,13 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+(/usr/local/texlive/2020/texmf-dist/tex/latex/bbm-macros/bbm.sty
+Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
+LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
+(Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
+LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
+(Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
+)
 (/usr/local/texlive/2020/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
@@ -713,22 +720,22 @@ LaTeX Warning: Label `sub@fig:KNN_P1c_199' multiply defined.
 )
 \openout1 = `bayes.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 50.
+LaTeX Font Info:    ... okay on input line 50.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -791,7 +798,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box60
-Package hyperref Info: Link coloring ON on input line 49.
+Package hyperref Info: Link coloring ON on input line 50.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -805,26 +812,26 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count299
 )
-LaTeX Info: Redefining \ref on input line 49.
-LaTeX Info: Redefining \pageref on input line 49.
-LaTeX Info: Redefining \nameref on input line 49.
+LaTeX Info: Redefining \ref on input line 50.
+LaTeX Info: Redefining \pageref on input line 50.
+LaTeX Info: Redefining \nameref on input line 50.
  (./bayes.out) (./bayes.out)
 \@outlinefile=\write4
 \openout4 = `bayes.out'.
 
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-55.
+56.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 58.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 59.
 
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 58.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 59.
 
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/amsfonts/umsb.fd
@@ -832,18 +839,18 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 76.
+(hyperref)                removing `math shift' on input line 77.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 76.
+(hyperref)                removing `superscript' on input line 77.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 76.
+(hyperref)                removing `math shift' on input line 77.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 79--82
+Underfull \hbox (badness 10000) in paragraph at lines 80--83
 
  []
 
@@ -856,288 +863,467 @@ File: ../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_10.pdf Graphic file (type
 pdf)
 <use ../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_10.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_10.pdf 
- used on input line 112.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+ used on input line 114.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 114--115
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_KNN_dataset_P1a_size_10.pdf, id=68, 492.1678pt x 502.2
 6898pt>
 File: ../results/ex1/conf_mtx_KNN_dataset_P1a_size_10.pdf Graphic file (type pd
 f)
 <use ../results/ex1/conf_mtx_KNN_dataset_P1a_size_10.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_KNN_dataset_P1a_size_10.pdf  u
-sed on input line 119.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+sed on input line 121.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 121--122
+ [][] 
+ []
+
 <../results/ex1/samples_QD_ML_dataset_P1a_size_10.pdf, id=69, 533.61166pt x 502
 .26898pt>
 File: ../results/ex1/samples_QD_ML_dataset_P1a_size_10.pdf Graphic file (type p
 df)
 <use ../results/ex1/samples_QD_ML_dataset_P1a_size_10.pdf>
 Package pdftex.def Info: ../results/ex1/samples_QD_ML_dataset_P1a_size_10.pdf  
-used on input line 126.
-(pdftex.def)             Requested size: 108.405pt x 102.03079pt.
+used on input line 128.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 128--129
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_25.pdf, id=70, 492.1678pt x 502
 .26898pt>
 File: ../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_25.pdf Graphic file (type 
 pdf)
 <use ../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_25.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_25.pdf 
- used on input line 134.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+ used on input line 136.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 136--137
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_KNN_dataset_P1a_size_25.pdf, id=71, 492.1678pt x 502.2
 6898pt>
 File: ../results/ex1/conf_mtx_KNN_dataset_P1a_size_25.pdf Graphic file (type pd
 f)
 <use ../results/ex1/conf_mtx_KNN_dataset_P1a_size_25.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_KNN_dataset_P1a_size_25.pdf  u
-sed on input line 141.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+sed on input line 143.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 143--144
+ [][] 
+ []
+
 <../results/ex1/samples_QD_ML_dataset_P1a_size_25.pdf, id=72, 533.61166pt x 502
 .26898pt>
 File: ../results/ex1/samples_QD_ML_dataset_P1a_size_25.pdf Graphic file (type p
 df)
 <use ../results/ex1/samples_QD_ML_dataset_P1a_size_25.pdf>
 Package pdftex.def Info: ../results/ex1/samples_QD_ML_dataset_P1a_size_25.pdf  
-used on input line 148.
-(pdftex.def)             Requested size: 108.405pt x 102.03079pt.
+used on input line 150.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 150--151
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_75.pdf, id=73, 492.1678pt x 502
 .26898pt>
 File: ../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_75.pdf Graphic file (type 
 pdf)
 <use ../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_75.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_75.pdf 
- used on input line 156.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+ used on input line 158.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 158--159
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_KNN_dataset_P1a_size_75.pdf, id=74, 492.1678pt x 502.2
 6898pt>
 File: ../results/ex1/conf_mtx_KNN_dataset_P1a_size_75.pdf Graphic file (type pd
 f)
 <use ../results/ex1/conf_mtx_KNN_dataset_P1a_size_75.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_KNN_dataset_P1a_size_75.pdf  u
-sed on input line 163.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+sed on input line 165.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 165--166
+ [][] 
+ []
+
 <../results/ex1/samples_QD_ML_dataset_P1a_size_75.pdf, id=75, 533.61166pt x 502
 .26898pt>
 File: ../results/ex1/samples_QD_ML_dataset_P1a_size_75.pdf Graphic file (type p
 df)
 <use ../results/ex1/samples_QD_ML_dataset_P1a_size_75.pdf>
 Package pdftex.def Info: ../results/ex1/samples_QD_ML_dataset_P1a_size_75.pdf  
-used on input line 170.
-(pdftex.def)             Requested size: 108.405pt x 102.03079pt.
+used on input line 172.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 172--173
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_199.pdf, id=76, 492.1678pt x 50
 2.26898pt>
 File: ../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_199.pdf Graphic file (type
  pdf)
 <use ../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_199.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_199.pdf
-  used on input line 178.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+  used on input line 180.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 180--181
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_KNN_dataset_P1a_size_199.pdf, id=77, 492.1678pt x 502.
 26898pt>
 File: ../results/ex1/conf_mtx_KNN_dataset_P1a_size_199.pdf Graphic file (type p
 df)
 <use ../results/ex1/conf_mtx_KNN_dataset_P1a_size_199.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_KNN_dataset_P1a_size_199.pdf  
-used on input line 185.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+used on input line 187.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 187--188
+ [][] 
+ []
+
 <../results/ex1/samples_QD_ML_dataset_P1a_size_199.pdf, id=78, 533.61166pt x 50
 2.26898pt>
 File: ../results/ex1/samples_QD_ML_dataset_P1a_size_199.pdf Graphic file (type 
 pdf)
 <use ../results/ex1/samples_QD_ML_dataset_P1a_size_199.pdf>
 Package pdftex.def Info: ../results/ex1/samples_QD_ML_dataset_P1a_size_199.pdf 
- used on input line 192.
-(pdftex.def)             Requested size: 108.405pt x 102.03079pt.
+ used on input line 194.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 194--195
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_10.pdf, id=79, 492.1678pt x 502
 .26898pt>
 File: ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_10.pdf Graphic file (type 
 pdf)
 <use ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_10.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_10.pdf 
- used on input line 207.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+ used on input line 210.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 210--211
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_KNN_dataset_P1b_size_10.pdf, id=80, 492.1678pt x 502.2
 6898pt>
 File: ../results/ex1/conf_mtx_KNN_dataset_P1b_size_10.pdf Graphic file (type pd
 f)
 <use ../results/ex1/conf_mtx_KNN_dataset_P1b_size_10.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_KNN_dataset_P1b_size_10.pdf  u
-sed on input line 214.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+sed on input line 217.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 217--218
+ [][] 
+ []
+
 <../results/ex1/samples_QD_ML_dataset_P1b_size_10.pdf, id=81, 533.61166pt x 502
 .26898pt>
 File: ../results/ex1/samples_QD_ML_dataset_P1b_size_10.pdf Graphic file (type p
 df)
 <use ../results/ex1/samples_QD_ML_dataset_P1b_size_10.pdf>
 Package pdftex.def Info: ../results/ex1/samples_QD_ML_dataset_P1b_size_10.pdf  
-used on input line 221.
-(pdftex.def)             Requested size: 108.405pt x 102.03079pt.
+used on input line 224.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 224--225
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_25.pdf, id=82, 492.1678pt x 502
 .26898pt>
 File: ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_25.pdf Graphic file (type 
 pdf)
 <use ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_25.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_25.pdf 
- used on input line 229.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+ used on input line 232.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 232--233
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_KNN_dataset_P1b_size_25.pdf, id=83, 492.1678pt x 502.2
 6898pt>
 File: ../results/ex1/conf_mtx_KNN_dataset_P1b_size_25.pdf Graphic file (type pd
 f)
 <use ../results/ex1/conf_mtx_KNN_dataset_P1b_size_25.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_KNN_dataset_P1b_size_25.pdf  u
-sed on input line 236.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+sed on input line 239.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 239--240
+ [][] 
+ []
+
 <../results/ex1/samples_QD_ML_dataset_P1b_size_25.pdf, id=84, 533.61166pt x 502
 .26898pt>
 File: ../results/ex1/samples_QD_ML_dataset_P1b_size_25.pdf Graphic file (type p
 df)
 <use ../results/ex1/samples_QD_ML_dataset_P1b_size_25.pdf>
 Package pdftex.def Info: ../results/ex1/samples_QD_ML_dataset_P1b_size_25.pdf  
-used on input line 243.
-(pdftex.def)             Requested size: 108.405pt x 102.03079pt.
+used on input line 246.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 246--247
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_75.pdf, id=85, 492.1678pt x 502
 .26898pt>
 File: ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_75.pdf Graphic file (type 
 pdf)
 <use ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_75.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_75.pdf 
- used on input line 251.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+ used on input line 254.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 254--255
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_KNN_dataset_P1b_size_75.pdf, id=86, 492.1678pt x 502.2
 6898pt>
 File: ../results/ex1/conf_mtx_KNN_dataset_P1b_size_75.pdf Graphic file (type pd
 f)
 <use ../results/ex1/conf_mtx_KNN_dataset_P1b_size_75.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_KNN_dataset_P1b_size_75.pdf  u
-sed on input line 258.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+sed on input line 261.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 261--262
+ [][] 
+ []
+
 <../results/ex1/samples_QD_ML_dataset_P1b_size_75.pdf, id=87, 533.61166pt x 502
 .26898pt>
 File: ../results/ex1/samples_QD_ML_dataset_P1b_size_75.pdf Graphic file (type p
 df)
 <use ../results/ex1/samples_QD_ML_dataset_P1b_size_75.pdf>
 Package pdftex.def Info: ../results/ex1/samples_QD_ML_dataset_P1b_size_75.pdf  
-used on input line 265.
-(pdftex.def)             Requested size: 108.405pt x 102.03079pt.
+used on input line 268.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 268--269
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_199.pdf, id=88, 492.1678pt x 50
 2.26898pt>
 File: ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_199.pdf Graphic file (type
  pdf)
 <use ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_199.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_199.pdf
-  used on input line 273.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+  used on input line 276.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 276--277
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_KNN_dataset_P1b_size_199.pdf, id=89, 492.1678pt x 502.
 26898pt>
 File: ../results/ex1/conf_mtx_KNN_dataset_P1b_size_199.pdf Graphic file (type p
 df)
 <use ../results/ex1/conf_mtx_KNN_dataset_P1b_size_199.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_KNN_dataset_P1b_size_199.pdf  
-used on input line 280.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+used on input line 283.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 283--284
+ [][] 
+ []
+
 <../results/ex1/samples_QD_ML_dataset_P1b_size_199.pdf, id=90, 533.61166pt x 50
 2.26898pt>
 File: ../results/ex1/samples_QD_ML_dataset_P1b_size_199.pdf Graphic file (type 
 pdf)
 <use ../results/ex1/samples_QD_ML_dataset_P1b_size_199.pdf>
 Package pdftex.def Info: ../results/ex1/samples_QD_ML_dataset_P1b_size_199.pdf 
- used on input line 287.
-(pdftex.def)             Requested size: 108.405pt x 102.03079pt.
+ used on input line 290.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 290--291
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_10.pdf, id=91, 492.1678pt x 502
 .26898pt>
 File: ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_10.pdf Graphic file (type 
 pdf)
 <use ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_10.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_10.pdf 
- used on input line 300.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+ used on input line 304.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 304--305
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_KNN_dataset_P1c_size_10.pdf, id=92, 492.1678pt x 502.2
 6898pt>
 File: ../results/ex1/conf_mtx_KNN_dataset_P1c_size_10.pdf Graphic file (type pd
 f)
 <use ../results/ex1/conf_mtx_KNN_dataset_P1c_size_10.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_KNN_dataset_P1c_size_10.pdf  u
-sed on input line 307.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+sed on input line 311.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 311--312
+ [][] 
+ []
+
 <../results/ex1/samples_QD_ML_dataset_P1c_size_10.pdf, id=93, 533.61166pt x 502
 .26898pt>
 File: ../results/ex1/samples_QD_ML_dataset_P1c_size_10.pdf Graphic file (type p
 df)
 <use ../results/ex1/samples_QD_ML_dataset_P1c_size_10.pdf>
 Package pdftex.def Info: ../results/ex1/samples_QD_ML_dataset_P1c_size_10.pdf  
-used on input line 314.
-(pdftex.def)             Requested size: 108.405pt x 102.03079pt.
+used on input line 318.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 318--319
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_25.pdf, id=94, 492.1678pt x 502
 .26898pt>
 File: ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_25.pdf Graphic file (type 
 pdf)
 <use ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_25.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_25.pdf 
- used on input line 322.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+ used on input line 326.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 326--327
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_KNN_dataset_P1c_size_25.pdf, id=95, 492.1678pt x 502.2
 6898pt>
 File: ../results/ex1/conf_mtx_KNN_dataset_P1c_size_25.pdf Graphic file (type pd
 f)
 <use ../results/ex1/conf_mtx_KNN_dataset_P1c_size_25.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_KNN_dataset_P1c_size_25.pdf  u
-sed on input line 329.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+sed on input line 333.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 333--334
+ [][] 
+ []
+
 <../results/ex1/samples_QD_ML_dataset_P1c_size_25.pdf, id=96, 533.61166pt x 502
 .26898pt>
 File: ../results/ex1/samples_QD_ML_dataset_P1c_size_25.pdf Graphic file (type p
 df)
 <use ../results/ex1/samples_QD_ML_dataset_P1c_size_25.pdf>
 Package pdftex.def Info: ../results/ex1/samples_QD_ML_dataset_P1c_size_25.pdf  
-used on input line 336.
-(pdftex.def)             Requested size: 108.405pt x 102.03079pt.
+used on input line 340.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 340--341
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_75.pdf, id=97, 492.1678pt x 502
 .26898pt>
 File: ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_75.pdf Graphic file (type 
 pdf)
 <use ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_75.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_75.pdf 
- used on input line 344.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+ used on input line 348.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 348--349
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_KNN_dataset_P1c_size_75.pdf, id=98, 492.1678pt x 502.2
 6898pt>
 File: ../results/ex1/conf_mtx_KNN_dataset_P1c_size_75.pdf Graphic file (type pd
 f)
 <use ../results/ex1/conf_mtx_KNN_dataset_P1c_size_75.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_KNN_dataset_P1c_size_75.pdf  u
-sed on input line 351.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+sed on input line 355.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 355--356
+ [][] 
+ []
+
 <../results/ex1/samples_QD_ML_dataset_P1c_size_75.pdf, id=99, 533.61166pt x 502
 .26898pt>
 File: ../results/ex1/samples_QD_ML_dataset_P1c_size_75.pdf Graphic file (type p
 df)
 <use ../results/ex1/samples_QD_ML_dataset_P1c_size_75.pdf>
 Package pdftex.def Info: ../results/ex1/samples_QD_ML_dataset_P1c_size_75.pdf  
-used on input line 358.
-(pdftex.def)             Requested size: 108.405pt x 102.03079pt.
+used on input line 362.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 362--363
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_199.pdf, id=100, 492.1678pt x 5
 02.26898pt>
 File: ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_199.pdf Graphic file (type
  pdf)
 <use ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_199.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_199.pdf
-  used on input line 366.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+  used on input line 370.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 370--371
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_KNN_dataset_P1c_size_199.pdf, id=101, 492.1678pt x 502
 .26898pt>
 File: ../results/ex1/conf_mtx_KNN_dataset_P1c_size_199.pdf Graphic file (type p
 df)
 <use ../results/ex1/conf_mtx_KNN_dataset_P1c_size_199.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_KNN_dataset_P1c_size_199.pdf  
-used on input line 373.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+used on input line 377.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 377--378
+ [][] 
+ []
+
 <../results/ex1/samples_QD_ML_dataset_P1c_size_199.pdf, id=102, 533.61166pt x 5
 02.26898pt>
 File: ../results/ex1/samples_QD_ML_dataset_P1c_size_199.pdf Graphic file (type 
 pdf)
 <use ../results/ex1/samples_QD_ML_dataset_P1c_size_199.pdf>
 Package pdftex.def Info: ../results/ex1/samples_QD_ML_dataset_P1c_size_199.pdf 
- used on input line 380.
-(pdftex.def)             Requested size: 108.405pt x 102.03079pt.
+ used on input line 384.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 384--385
+ [][] 
+ []
 
 [2] [3 <../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_10.pdf> <../results/ex1/
 conf_mtx_KNN_dataset_P1a_size_10.pdf
@@ -1308,7 +1494,7 @@ pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex1/samples_QD_ML
 _dataset_P1c_size_199.pdf): PDF inclusion: multiple pdfs with page group includ
 ed in a single page
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 392--395
+Underfull \hbox (badness 10000) in paragraph at lines 395--398
 
  []
 
@@ -1319,55 +1505,63 @@ File: ../results/ex1/loss_GMM_EM_dataset_P1b_size_199.pdf Graphic file (type pd
 f)
 <use ../results/ex1/loss_GMM_EM_dataset_P1b_size_199.pdf>
 Package pdftex.def Info: ../results/ex1/loss_GMM_EM_dataset_P1b_size_199.pdf  u
-sed on input line 424.
-(pdftex.def)             Requested size: 108.405pt x 99.43355pt.
+sed on input line 427.
+(pdftex.def)             Requested size: 130.08621pt x 119.32327pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 427--428
+ [][] 
+ []
+
 <../results/ex1/conf_mtx_GMM_EM_dataset_P1b_size_199.pdf, id=554, 492.1678pt x 
 502.26898pt>
 File: ../results/ex1/conf_mtx_GMM_EM_dataset_P1b_size_199.pdf Graphic file (typ
 e pdf)
 <use ../results/ex1/conf_mtx_GMM_EM_dataset_P1b_size_199.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_GMM_EM_dataset_P1b_size_199.pd
-f  used on input line 431.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+f  used on input line 434.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 434--435
+ [][] 
+ []
+
 File: ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_199.pdf Graphic file (type
  pdf)
 <use ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_199.pdf>
 Package pdftex.def Info: ../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_199.pdf
-  used on input line 438.
-(pdftex.def)             Requested size: 108.405pt x 110.6298pt.
+  used on input line 441.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 441--442
+ [][] 
+ []
+
 <../results/ex1/samples_GMM_EM_dataset_P1b_size_199.pdf, id=555, 533.61166pt x 
 502.26898pt>
 File: ../results/ex1/samples_GMM_EM_dataset_P1b_size_199.pdf Graphic file (type
  pdf)
 <use ../results/ex1/samples_GMM_EM_dataset_P1b_size_199.pdf>
 Package pdftex.def Info: ../results/ex1/samples_GMM_EM_dataset_P1b_size_199.pdf
-  used on input line 445.
-(pdftex.def)             Requested size: 108.405pt x 102.03079pt.
+  used on input line 448.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 448--449
+ [][] 
+ []
+
 File: ../results/ex1/samples_QD_ML_dataset_P1b_size_199.pdf Graphic file (type 
 pdf)
 <use ../results/ex1/samples_QD_ML_dataset_P1b_size_199.pdf>
 Package pdftex.def Info: ../results/ex1/samples_QD_ML_dataset_P1b_size_199.pdf 
- used on input line 452.
-(pdftex.def)             Requested size: 108.405pt x 102.03079pt.
+ used on input line 455.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 464--466
-
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 455--456
+ [][] 
  []
 
 
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 471.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 471.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 471.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 474--476
+Underfull \hbox (badness 10000) in paragraph at lines 466--469
 
  []
 
@@ -1383,69 +1577,759 @@ pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex1/samples_GMM_E
 M_dataset_P1b_size_199.pdf): PDF inclusion: multiple pdfs with page group inclu
 ded in a single page
 >]
+<../results/ex1/conf_mtx_QD_EXP_ML_dataset_P1c_size_199.pdf, id=615, 492.1678pt
+ x 502.26898pt>
+File: ../results/ex1/conf_mtx_QD_EXP_ML_dataset_P1c_size_199.pdf Graphic file (
+type pdf)
+<use ../results/ex1/conf_mtx_QD_EXP_ML_dataset_P1c_size_199.pdf>
+Package pdftex.def Info: ../results/ex1/conf_mtx_QD_EXP_ML_dataset_P1c_size_199
+.pdf  used on input line 488.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 488--489
+ [][] 
+ []
+
+File: ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_199.pdf Graphic file (type
+ pdf)
+<use ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_199.pdf>
+Package pdftex.def Info: ../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_199.pdf
+  used on input line 495.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 495--496
+ [][] 
+ []
+
+<../results/ex1/samples_QD_EXP_ML_dataset_P1c_size_199.pdf, id=616, 533.61166pt
+ x 502.26898pt>
+File: ../results/ex1/samples_QD_EXP_ML_dataset_P1c_size_199.pdf Graphic file (t
+ype pdf)
+<use ../results/ex1/samples_QD_EXP_ML_dataset_P1c_size_199.pdf>
+Package pdftex.def Info: ../results/ex1/samples_QD_EXP_ML_dataset_P1c_size_199.
+pdf  used on input line 502.
+(pdftex.def)             Requested size: 130.08621pt x 122.44002pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 502--503
+ [][] 
+ []
+
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 483.
+(hyperref)                removing `math shift' on input line 516.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 483.
+(hyperref)                removing `superscript' on input line 516.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 486--488
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 516.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 519--522
 
  []
 
-[8]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 501.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 501.
+[8 <../results/ex1/conf_mtx_QD_EXP_ML_dataset_P1c_size_199.pdf> <../results/ex1
+/samples_QD_EXP_ML_dataset_P1c_size_199.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex1/samples_QD_EX
+P_ML_dataset_P1c_size_199.pdf): PDF inclusion: multiple pdfs with page group in
+cluded in a single page
+>]
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 525
+.
+ (/usr/local/texlive/2020/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+)
+<../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_50.pdf, id=661, 492.1678pt x 50
+2.26898pt>
+File: ../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_50.pdf Graphic file (type 
+pdf)
+<use ../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_50.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_50.pdf 
+ used on input line 534.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 534--535
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_KNN_dataset_P2a_size_50.pdf, id=662, 492.1678pt x 502.
+26898pt>
+File: ../results/ex2/conf_mtx_KNN_dataset_P2a_size_50.pdf Graphic file (type pd
+f)
+<use ../results/ex2/conf_mtx_KNN_dataset_P2a_size_50.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_KNN_dataset_P2a_size_50.pdf  u
+sed on input line 541.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 541--542
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_100.pdf, id=663, 492.1678pt x 5
+02.26898pt>
+File: ../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_100.pdf Graphic file (type
+ pdf)
+<use ../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_100.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_100.pdf
+  used on input line 548.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 548--549
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_KNN_dataset_P2a_size_100.pdf, id=664, 492.1678pt x 502
+.26898pt>
+File: ../results/ex2/conf_mtx_KNN_dataset_P2a_size_100.pdf Graphic file (type p
+df)
+<use ../results/ex2/conf_mtx_KNN_dataset_P2a_size_100.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_KNN_dataset_P2a_size_100.pdf  
+used on input line 555.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 555--556
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_300.pdf, id=665, 492.1678pt x 5
+02.26898pt>
+File: ../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_300.pdf Graphic file (type
+ pdf)
+<use ../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_300.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_300.pdf
+  used on input line 562.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 562--563
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_KNN_dataset_P2a_size_300.pdf, id=666, 492.1678pt x 502
+.26898pt>
+File: ../results/ex2/conf_mtx_KNN_dataset_P2a_size_300.pdf Graphic file (type p
+df)
+<use ../results/ex2/conf_mtx_KNN_dataset_P2a_size_300.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_KNN_dataset_P2a_size_300.pdf  
+used on input line 569.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 569--570
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_999.pdf, id=667, 492.1678pt x 5
+02.26898pt>
+File: ../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_999.pdf Graphic file (type
+ pdf)
+<use ../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_999.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_999.pdf
+  used on input line 576.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 576--577
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_KNN_dataset_P2a_size_999.pdf, id=668, 492.1678pt x 502
+.26898pt>
+File: ../results/ex2/conf_mtx_KNN_dataset_P2a_size_999.pdf Graphic file (type p
+df)
+<use ../results/ex2/conf_mtx_KNN_dataset_P2a_size_999.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_KNN_dataset_P2a_size_999.pdf  
+used on input line 583.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 583--584
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_50.pdf, id=669, 492.1678pt x 50
+2.26898pt>
+File: ../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_50.pdf Graphic file (type 
+pdf)
+<use ../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_50.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_50.pdf 
+ used on input line 595.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 595--596
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_KNN_dataset_P2b_size_50.pdf, id=670, 492.1678pt x 502.
+26898pt>
+File: ../results/ex2/conf_mtx_KNN_dataset_P2b_size_50.pdf Graphic file (type pd
+f)
+<use ../results/ex2/conf_mtx_KNN_dataset_P2b_size_50.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_KNN_dataset_P2b_size_50.pdf  u
+sed on input line 602.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 602--603
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_100.pdf, id=671, 492.1678pt x 5
+02.26898pt>
+File: ../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_100.pdf Graphic file (type
+ pdf)
+<use ../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_100.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_100.pdf
+  used on input line 609.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 609--610
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_KNN_dataset_P2b_size_100.pdf, id=672, 492.1678pt x 502
+.26898pt>
+File: ../results/ex2/conf_mtx_KNN_dataset_P2b_size_100.pdf Graphic file (type p
+df)
+<use ../results/ex2/conf_mtx_KNN_dataset_P2b_size_100.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_KNN_dataset_P2b_size_100.pdf  
+used on input line 616.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 616--617
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_300.pdf, id=673, 492.1678pt x 5
+02.26898pt>
+File: ../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_300.pdf Graphic file (type
+ pdf)
+<use ../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_300.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_300.pdf
+  used on input line 623.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 623--624
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_KNN_dataset_P2b_size_300.pdf, id=674, 492.1678pt x 502
+.26898pt>
+File: ../results/ex2/conf_mtx_KNN_dataset_P2b_size_300.pdf Graphic file (type p
+df)
+<use ../results/ex2/conf_mtx_KNN_dataset_P2b_size_300.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_KNN_dataset_P2b_size_300.pdf  
+used on input line 630.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 630--631
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_999.pdf, id=675, 492.1678pt x 5
+02.26898pt>
+File: ../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_999.pdf Graphic file (type
+ pdf)
+<use ../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_999.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_999.pdf
+  used on input line 637.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 637--638
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_KNN_dataset_P2b_size_999.pdf, id=676, 492.1678pt x 502
+.26898pt>
+File: ../results/ex2/conf_mtx_KNN_dataset_P2b_size_999.pdf Graphic file (type p
+df)
+<use ../results/ex2/conf_mtx_KNN_dataset_P2b_size_999.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_KNN_dataset_P2b_size_999.pdf  
+used on input line 644.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 644--645
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_50.pdf, id=677, 492.1678pt x 50
+2.26898pt>
+File: ../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_50.pdf Graphic file (type 
+pdf)
+<use ../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_50.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_50.pdf 
+ used on input line 656.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 656--657
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_KNN_dataset_P2c_size_50.pdf, id=678, 492.1678pt x 502.
+26898pt>
+File: ../results/ex2/conf_mtx_KNN_dataset_P2c_size_50.pdf Graphic file (type pd
+f)
+<use ../results/ex2/conf_mtx_KNN_dataset_P2c_size_50.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_KNN_dataset_P2c_size_50.pdf  u
+sed on input line 663.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 663--664
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_100.pdf, id=679, 492.1678pt x 5
+02.26898pt>
+File: ../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_100.pdf Graphic file (type
+ pdf)
+<use ../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_100.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_100.pdf
+  used on input line 670.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 670--671
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_KNN_dataset_P2c_size_100.pdf, id=680, 492.1678pt x 502
+.26898pt>
+File: ../results/ex2/conf_mtx_KNN_dataset_P2c_size_100.pdf Graphic file (type p
+df)
+<use ../results/ex2/conf_mtx_KNN_dataset_P2c_size_100.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_KNN_dataset_P2c_size_100.pdf  
+used on input line 677.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 677--678
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_300.pdf, id=681, 492.1678pt x 5
+02.26898pt>
+File: ../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_300.pdf Graphic file (type
+ pdf)
+<use ../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_300.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_300.pdf
+  used on input line 684.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 684--685
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_KNN_dataset_P2c_size_300.pdf, id=682, 492.1678pt x 502
+.26898pt>
+File: ../results/ex2/conf_mtx_KNN_dataset_P2c_size_300.pdf Graphic file (type p
+df)
+<use ../results/ex2/conf_mtx_KNN_dataset_P2c_size_300.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_KNN_dataset_P2c_size_300.pdf  
+used on input line 691.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 691--692
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_999.pdf, id=683, 492.1678pt x 5
+02.26898pt>
+File: ../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_999.pdf Graphic file (type
+ pdf)
+<use ../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_999.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_999.pdf
+  used on input line 698.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 698--699
+ [][] 
+ []
+
+<../results/ex2/conf_mtx_KNN_dataset_P2c_size_999.pdf, id=684, 492.1678pt x 502
+.26898pt>
+File: ../results/ex2/conf_mtx_KNN_dataset_P2c_size_999.pdf Graphic file (type p
+df)
+<use ../results/ex2/conf_mtx_KNN_dataset_P2c_size_999.pdf>
+Package pdftex.def Info: ../results/ex2/conf_mtx_KNN_dataset_P2c_size_999.pdf  
+used on input line 705.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 705--706
+ [][] 
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 717.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 717.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 720--722
+
+ []
+
+[9] [10 <../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_50.pdf> <../results/ex2
+/conf_mtx_KNN_dataset_P2a_size_50.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_KNN_
+dataset_P2a_size_50.pdf): PDF inclusion: multiple pdfs with page group included
+ in a single page
+> <../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_100.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_QD_M
+L_dataset_P2a_size_100.pdf): PDF inclusion: multiple pdfs with page group inclu
+ded in a single page
+> <../results/ex2/conf_mtx_KNN_dataset_P2a_size_100.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_KNN_
+dataset_P2a_size_100.pdf): PDF inclusion: multiple pdfs with page group include
+d in a single page
+> <../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_300.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_QD_M
+L_dataset_P2a_size_300.pdf): PDF inclusion: multiple pdfs with page group inclu
+ded in a single page
+> <../results/ex2/conf_mtx_KNN_dataset_P2a_size_300.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_KNN_
+dataset_P2a_size_300.pdf): PDF inclusion: multiple pdfs with page group include
+d in a single page
+> <../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_999.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_QD_M
+L_dataset_P2a_size_999.pdf): PDF inclusion: multiple pdfs with page group inclu
+ded in a single page
+> <../results/ex2/conf_mtx_KNN_dataset_P2a_size_999.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_KNN_
+dataset_P2a_size_999.pdf): PDF inclusion: multiple pdfs with page group include
+d in a single page
+>] [11 <../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_50.pdf> <../results/ex2/
+conf_mtx_KNN_dataset_P2b_size_50.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_KNN_
+dataset_P2b_size_50.pdf): PDF inclusion: multiple pdfs with page group included
+ in a single page
+> <../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_100.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_QD_M
+L_dataset_P2b_size_100.pdf): PDF inclusion: multiple pdfs with page group inclu
+ded in a single page
+> <../results/ex2/conf_mtx_KNN_dataset_P2b_size_100.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_KNN_
+dataset_P2b_size_100.pdf): PDF inclusion: multiple pdfs with page group include
+d in a single page
+> <../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_300.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_QD_M
+L_dataset_P2b_size_300.pdf): PDF inclusion: multiple pdfs with page group inclu
+ded in a single page
+> <../results/ex2/conf_mtx_KNN_dataset_P2b_size_300.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_KNN_
+dataset_P2b_size_300.pdf): PDF inclusion: multiple pdfs with page group include
+d in a single page
+> <../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_999.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_QD_M
+L_dataset_P2b_size_999.pdf): PDF inclusion: multiple pdfs with page group inclu
+ded in a single page
+> <../results/ex2/conf_mtx_KNN_dataset_P2b_size_999.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_KNN_
+dataset_P2b_size_999.pdf): PDF inclusion: multiple pdfs with page group include
+d in a single page
+>] [12 <../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_50.pdf> <../results/ex2/
+conf_mtx_KNN_dataset_P2c_size_50.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_KNN_
+dataset_P2c_size_50.pdf): PDF inclusion: multiple pdfs with page group included
+ in a single page
+> <../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_100.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_QD_M
+L_dataset_P2c_size_100.pdf): PDF inclusion: multiple pdfs with page group inclu
+ded in a single page
+> <../results/ex2/conf_mtx_KNN_dataset_P2c_size_100.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_KNN_
+dataset_P2c_size_100.pdf): PDF inclusion: multiple pdfs with page group include
+d in a single page
+> <../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_300.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_QD_M
+L_dataset_P2c_size_300.pdf): PDF inclusion: multiple pdfs with page group inclu
+ded in a single page
+> <../results/ex2/conf_mtx_KNN_dataset_P2c_size_300.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_KNN_
+dataset_P2c_size_300.pdf): PDF inclusion: multiple pdfs with page group include
+d in a single page
+> <../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_999.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_QD_M
+L_dataset_P2c_size_999.pdf): PDF inclusion: multiple pdfs with page group inclu
+ded in a single page
+> <../results/ex2/conf_mtx_KNN_dataset_P2c_size_999.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex2/conf_mtx_KNN_
+dataset_P2c_size_999.pdf): PDF inclusion: multiple pdfs with page group include
+d in a single page
+>]
+<../results/ex3/conf_mtx_KNN_dataset_P3a_size_199.pdf, id=927, 492.1678pt x 502
+.26898pt>
+File: ../results/ex3/conf_mtx_KNN_dataset_P3a_size_199.pdf Graphic file (type p
+df)
+<use ../results/ex3/conf_mtx_KNN_dataset_P3a_size_199.pdf>
+Package pdftex.def Info: ../results/ex3/conf_mtx_KNN_dataset_P3a_size_199.pdf  
+used on input line 727.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 727--728
+ [][] 
+ []
+
+<../results/ex3/conf_mtx_QD_ML_dataset_P3a_size_199.pdf, id=928, 492.1678pt x 5
+02.26898pt>
+File: ../results/ex3/conf_mtx_QD_ML_dataset_P3a_size_199.pdf Graphic file (type
+ pdf)
+<use ../results/ex3/conf_mtx_QD_ML_dataset_P3a_size_199.pdf>
+Package pdftex.def Info: ../results/ex3/conf_mtx_QD_ML_dataset_P3a_size_199.pdf
+  used on input line 734.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 734--735
+ [][] 
+ []
+
+<../results/ex3/samples_QD_ML_dataset_P3a_size_199.pdf, id=929, 517.02908pt x 5
+02.26898pt>
+File: ../results/ex3/samples_QD_ML_dataset_P3a_size_199.pdf Graphic file (type 
+pdf)
+<use ../results/ex3/samples_QD_ML_dataset_P3a_size_199.pdf>
+Package pdftex.def Info: ../results/ex3/samples_QD_ML_dataset_P3a_size_199.pdf 
+ used on input line 741.
+(pdftex.def)             Requested size: 130.08621pt x 126.37166pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 741--742
+ [][] 
+ []
+
+<../results/ex3/conf_mtx_GMM_dataset_P3a_size_199.pdf, id=930, 492.1678pt x 502
+.26898pt>
+File: ../results/ex3/conf_mtx_GMM_dataset_P3a_size_199.pdf Graphic file (type p
+df)
+<use ../results/ex3/conf_mtx_GMM_dataset_P3a_size_199.pdf>
+Package pdftex.def Info: ../results/ex3/conf_mtx_GMM_dataset_P3a_size_199.pdf  
+used on input line 748.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 748--749
+ [][] 
+ []
+
+<../results/ex3/samples_GMM_EM_dataset_P3a_size_199.pdf, id=931, 517.02908pt x 
+502.26898pt>
+File: ../results/ex3/samples_GMM_EM_dataset_P3a_size_199.pdf Graphic file (type
+ pdf)
+<use ../results/ex3/samples_GMM_EM_dataset_P3a_size_199.pdf>
+Package pdftex.def Info: ../results/ex3/samples_GMM_EM_dataset_P3a_size_199.pdf
+  used on input line 755.
+(pdftex.def)             Requested size: 130.08621pt x 126.37166pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 755--756
+ [][] 
+ []
+
+<../results/ex3/conf_mtx_KNN_dataset_P3b_size_199.pdf, id=932, 492.1678pt x 502
+.26898pt>
+File: ../results/ex3/conf_mtx_KNN_dataset_P3b_size_199.pdf Graphic file (type p
+df)
+<use ../results/ex3/conf_mtx_KNN_dataset_P3b_size_199.pdf>
+Package pdftex.def Info: ../results/ex3/conf_mtx_KNN_dataset_P3b_size_199.pdf  
+used on input line 767.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 767--768
+ [][] 
+ []
+
+<../results/ex3/conf_mtx_QD_ML_dataset_P3b_size_199.pdf, id=933, 492.1678pt x 5
+02.26898pt>
+File: ../results/ex3/conf_mtx_QD_ML_dataset_P3b_size_199.pdf Graphic file (type
+ pdf)
+<use ../results/ex3/conf_mtx_QD_ML_dataset_P3b_size_199.pdf>
+Package pdftex.def Info: ../results/ex3/conf_mtx_QD_ML_dataset_P3b_size_199.pdf
+  used on input line 774.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 774--775
+ [][] 
+ []
+
+<../results/ex3/samples_QD_ML_dataset_P3b_size_199.pdf, id=934, 517.02908pt x 5
+02.26898pt>
+File: ../results/ex3/samples_QD_ML_dataset_P3b_size_199.pdf Graphic file (type 
+pdf)
+<use ../results/ex3/samples_QD_ML_dataset_P3b_size_199.pdf>
+Package pdftex.def Info: ../results/ex3/samples_QD_ML_dataset_P3b_size_199.pdf 
+ used on input line 781.
+(pdftex.def)             Requested size: 130.08621pt x 126.37166pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 781--782
+ [][] 
+ []
+
+<../results/ex3/conf_mtx_GMM_dataset_P3b_size_199.pdf, id=935, 492.1678pt x 502
+.26898pt>
+File: ../results/ex3/conf_mtx_GMM_dataset_P3b_size_199.pdf Graphic file (type p
+df)
+<use ../results/ex3/conf_mtx_GMM_dataset_P3b_size_199.pdf>
+Package pdftex.def Info: ../results/ex3/conf_mtx_GMM_dataset_P3b_size_199.pdf  
+used on input line 788.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 788--789
+ [][] 
+ []
+
+<../results/ex3/samples_GMM_EM_dataset_P3b_size_199.pdf, id=936, 517.02908pt x 
+502.26898pt>
+File: ../results/ex3/samples_GMM_EM_dataset_P3b_size_199.pdf Graphic file (type
+ pdf)
+<use ../results/ex3/samples_GMM_EM_dataset_P3b_size_199.pdf>
+Package pdftex.def Info: ../results/ex3/samples_GMM_EM_dataset_P3b_size_199.pdf
+  used on input line 795.
+(pdftex.def)             Requested size: 130.08621pt x 126.37166pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 795--796
+ [][] 
+ []
+
+<../results/ex4/conf_mtx_bog.pdf, id=937, 492.1678pt x 502.26898pt>
+File: ../results/ex4/conf_mtx_bog.pdf Graphic file (type pdf)
+<use ../results/ex4/conf_mtx_bog.pdf>
+Package pdftex.def Info: ../results/ex4/conf_mtx_bog.pdf  used on input line 81
+4.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 814--815
+ [][] 
+ []
+
+<../results/ex4/conf_mtx_tfidf.pdf, id=938, 492.1678pt x 502.26898pt>
+File: ../results/ex4/conf_mtx_tfidf.pdf Graphic file (type pdf)
+<use ../results/ex4/conf_mtx_tfidf.pdf>
+Package pdftex.def Info: ../results/ex4/conf_mtx_tfidf.pdf  used on input line 
+821.
+(pdftex.def)             Requested size: 130.08621pt x 132.75577pt.
+
+Overfull \hbox (13.9963pt too wide) in paragraph at lines 821--822
+ [][] 
+ []
+
+[13 <../results/ex3/conf_mtx_KNN_dataset_P3a_size_199.pdf> <../results/ex3/conf
+_mtx_QD_ML_dataset_P3a_size_199.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex3/conf_mtx_QD_M
+L_dataset_P3a_size_199.pdf): PDF inclusion: multiple pdfs with page group inclu
+ded in a single page
+> <../results/ex3/samples_QD_ML_dataset_P3a_size_199.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex3/samples_QD_ML
+_dataset_P3a_size_199.pdf): PDF inclusion: multiple pdfs with page group includ
+ed in a single page
+> <../results/ex3/conf_mtx_GMM_dataset_P3a_size_199.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex3/conf_mtx_GMM_
+dataset_P3a_size_199.pdf): PDF inclusion: multiple pdfs with page group include
+d in a single page
+> <../results/ex3/samples_GMM_EM_dataset_P3a_size_199.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex3/samples_GMM_E
+M_dataset_P3a_size_199.pdf): PDF inclusion: multiple pdfs with page group inclu
+ded in a single page
+>] [14 <../results/ex3/conf_mtx_KNN_dataset_P3b_size_199.pdf> <../results/ex3/c
+onf_mtx_QD_ML_dataset_P3b_size_199.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex3/conf_mtx_QD_M
+L_dataset_P3b_size_199.pdf): PDF inclusion: multiple pdfs with page group inclu
+ded in a single page
+> <../results/ex3/samples_QD_ML_dataset_P3b_size_199.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex3/samples_QD_ML
+_dataset_P3b_size_199.pdf): PDF inclusion: multiple pdfs with page group includ
+ed in a single page
+> <../results/ex3/conf_mtx_GMM_dataset_P3b_size_199.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex3/conf_mtx_GMM_
+dataset_P3b_size_199.pdf): PDF inclusion: multiple pdfs with page group include
+d in a single page
+> <../results/ex3/samples_GMM_EM_dataset_P3b_size_199.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex3/samples_GMM_E
+M_dataset_P3b_size_199.pdf): PDF inclusion: multiple pdfs with page group inclu
+ded in a single page
+> <../results/ex4/conf_mtx_bog.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex4/conf_mtx_bog.
+pdf): PDF inclusion: multiple pdfs with page group included in a single page
+> <../results/ex4/conf_mtx_tfidf.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ../results/ex4/conf_mtx_tfid
+f.pdf): PDF inclusion: multiple pdfs with page group included in a single page
+>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 834.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 834.
  (./bayes.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 501.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 501.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 834.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 834.
 Package rerunfilecheck Info: File `bayes.out' has not changed.
 (rerunfilecheck)             Checksum: DDD92B4FC96FD5425B46041CB682C398;265.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 501.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 834.
  ) 
 Here is how much of TeX's memory you used:
- 18844 strings out of 480608
- 359445 string characters out of 5903629
- 606823 words of memory out of 5000000
- 34292 multiletter control sequences out of 15000+600000
- 551941 words of font info for 86 fonts, out of 8000000 for 9000
+ 19223 strings out of 480608
+ 375319 string characters out of 5903629
+ 611329 words of memory out of 5000000
+ 34602 multiletter control sequences out of 15000+600000
+ 552863 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,20n,60p,1119b,556s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/
-texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/t
-exlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/te
-xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texl
-ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texli
-ve/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
-e/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/202
-0/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/202
-0/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/local/texlive
-/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2
-020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/202
-0/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2020/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/2020/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2020/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/font
-s/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/
-public/amsfonts/symbols/msbm10.pfb>
-Output written on bayes.pdf (8 pages, 788290 bytes).
+ </Users/abhijith/Library/texlive/2020/texmf-var/fonts/pk/ljfour/public/bbm/b
+bm10.657pk>{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</u
+sr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr
+/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/l
+ocal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/lo
+cal/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/loc
+al/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/te
+xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/te
+xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb></usr/loca
+l/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/
+texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/te
+xlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texl
+ive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive
+/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/20
+20/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl10.pfb></usr/local/texlive/202
+0/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2020/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-
+dist/fonts/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2020/texmf-dist/fon
+ts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on bayes.pdf (14 pages, 1200186 bytes).
 PDF statistics:
- 686 PDF objects out of 1000 (max. 8388607)
- 557 compressed objects within 6 object streams
- 26 named destinations out of 1000 (max. 500000)
- 240 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1155 PDF objects out of 1200 (max. 8388607)
+ 934 compressed objects within 10 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 430 words of extra memory for PDF output out of 10000 (max. 10000000)
 

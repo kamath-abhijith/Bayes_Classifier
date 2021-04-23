@@ -5,6 +5,7 @@
 \usepackage{verbatim}
 \usepackage{subcaption}
 \usepackage{amsgen,amsmath,amstext,amsbsy,amsopn,tikz,amssymb}
+\usepackage{bbm}
 \usepackage{fancyhdr}
 \usepackage[colorlinks=true, urlcolor=blue,  linkcolor=blue, citecolor=blue]{hyperref}
 \usepackage{subcaption}
@@ -107,23 +108,24 @@ Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dat
 {\it Inferences on P1a}: The class means are $\bmu_{0} = [0 \; 0]^{\TT}$ and $\bmu_{1} = [1 \; 1]^{\TT}$, and the covariances are in the same order. The class distributions are ``very close''. i.e., they have low discriminability. This is seen with the training samples from each class overlapping into the other class. Within this setting, the classifiers trained with training sizes $10$, $25$, $75$, and $199$ on the average show, show an increasing trend in test accuracy. The nearest-neighbour classifier performs comparably to the Bayes' classifier. In no case, the error in classification using nearest-neighbour classifier exceeds twice the error in the Bayes' classifier. With increasing size of the training set, the learnt Gaussians are observed to learn ``better'', i.e., the means and covariances are closer to the true values. This shows that MLE is consistent.
 \begin{figure}[!htbp]
 \centering
+\quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_10.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_10.pdf}
        \caption{QDA on P1a, size $10$.}
        \label{fig:QDA_P1a_10}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_KNN_dataset_P1a_size_10.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1a_size_10.pdf}
        \caption{KNN on P1a, size $10$.}
        \label{fig:KNN_P1a_10}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/samples_QD_ML_dataset_P1a_size_10.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1a_size_10.pdf}
        \caption{Discriminant, size $10$.}
        \label{fig:DF_P1a_10}
     \end{subfigure}
@@ -131,21 +133,21 @@ Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dat
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_25.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_25.pdf}
        \caption{QDA on P1a, size $25$.}
        \label{fig:QDA_P1a_25}
     \end{subfigure}
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_KNN_dataset_P1a_size_25.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1a_size_25.pdf}
        \caption{KNN on P1a, size $25$.}
        \label{fig:KNN_P1a_25}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/samples_QD_ML_dataset_P1a_size_25.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1a_size_25.pdf}
        \caption{Discriminant, size $25$.}
        \label{fig:DF_P1a_25}
     \end{subfigure}
@@ -153,21 +155,21 @@ Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dat
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_75.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_75.pdf}
        \caption{QDA on P1a, size $75$.}
        \label{fig:QDA_P1a_75}
     \end{subfigure}
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_KNN_dataset_P1a_size_75.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1a_size_75.pdf}
        \caption{KNN on P1a, size $75$.}
        \label{fig:KNN_P1a_75}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/samples_QD_ML_dataset_P1a_size_75.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1a_size_75.pdf}
        \caption{Discriminant, size $75$.}
        \label{fig:DF_P1a_75}
     \end{subfigure}
@@ -175,21 +177,21 @@ Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dat
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_199.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_199.pdf}
        \caption{QDA on P1a, size $199$.}
        \label{fig:QDA_P1a_199}
     \end{subfigure}
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_KNN_dataset_P1a_size_199.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1a_size_199.pdf}
        \caption{KNN on P1a, size $199$.}
        \label{fig:KNN_P1a_199}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/samples_QD_ML_dataset_P1a_size_199.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1a_size_199.pdf}
        \caption{Discriminant, size $199$.}
        \label{fig:DF_P1a_199}
     \end{subfigure}
@@ -202,23 +204,24 @@ Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dat
 
 \begin{figure}[!htbp]
 \centering
+\quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_10.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_10.pdf}
        \caption{QDA on P1b, size $10$.}
        \label{fig:QDA_P1b_10}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_KNN_dataset_P1b_size_10.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1b_size_10.pdf}
        \caption{KNN on P1b, size $10$.}
        \label{fig:KNN_P1b_10}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/samples_QD_ML_dataset_P1b_size_10.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1b_size_10.pdf}
        \caption{Discriminant, size $10$.}
        \label{fig:KNN_P1b_10}
     \end{subfigure}
@@ -226,21 +229,21 @@ Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dat
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_25.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_25.pdf}
        \caption{QDA on P1b, size $25$.}
        \label{fig:KNN_P1b_25}
     \end{subfigure}
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_KNN_dataset_P1b_size_25.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1b_size_25.pdf}
        \caption{KNN on P1b, size $25$.}
        \label{fig:KNN_P1b_25}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/samples_QD_ML_dataset_P1b_size_25.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1b_size_25.pdf}
        \caption{Discriminant, size $25$.}
        \label{fig:KNN_P1b_25}
     \end{subfigure}
@@ -248,21 +251,21 @@ Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dat
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_75.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_75.pdf}
        \caption{QDA on P1b, size $75$.}
        \label{fig:KNN_P1b_75}
     \end{subfigure}
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_KNN_dataset_P1b_size_75.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1b_size_75.pdf}
        \caption{KNN on P1b, size $75$.}
        \label{fig:KNN_P1b_75}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/samples_QD_ML_dataset_P1b_size_75.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1b_size_75.pdf}
        \caption{Discriminant, size $75$.}
        \label{fig:KNN_P1b_75}
     \end{subfigure}
@@ -270,21 +273,21 @@ Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dat
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_199.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_199.pdf}
        \caption{QDA on P1b, size $199$.}
        \label{fig:KNN_P1b_199}
     \end{subfigure}
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_KNN_dataset_P1b_size_199.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1b_size_199.pdf}
        \caption{KNN on P1b, size $199$.}
        \label{fig:KNN_P1b_199}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/samples_QD_ML_dataset_P1b_size_199.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1b_size_199.pdf}
        \caption{Discriminant, size $199$.}
        \label{fig:KNN_P1b_199}
     \end{subfigure}
@@ -295,23 +298,24 @@ Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dat
 
 \begin{figure}[!htbp]
 \centering
+\quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_10.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_10.pdf}
        \caption{QDA on P1c, size $10$.}
        \label{fig:QDA_P1c_10}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_KNN_dataset_P1c_size_10.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1c_size_10.pdf}
        \caption{KNN on P1c, size $10$.}
        \label{fig:KNN_P1c_10}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/samples_QD_ML_dataset_P1c_size_10.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1c_size_10.pdf}
        \caption{Discriminant, size $10$.}
        \label{fig:KNN_P1c_10}
     \end{subfigure}
@@ -319,21 +323,21 @@ Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dat
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_25.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_25.pdf}
        \caption{QDA on P1c, size $25$.}
        \label{fig:KNN_P1c_25}
     \end{subfigure}
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_KNN_dataset_P1c_size_25.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1c_size_25.pdf}
        \caption{KNN on P1c, size $25$.}
        \label{fig:KNN_P1c_25}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/samples_QD_ML_dataset_P1c_size_25.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1c_size_25.pdf}
        \caption{Discriminant, size $25$.}
        \label{fig:KNN_P1c_25}
     \end{subfigure}
@@ -341,21 +345,21 @@ Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dat
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_75.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_75.pdf}
        \caption{QDA on P1c, size $75$.}
        \label{fig:KNN_P1c_75}
     \end{subfigure}
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_KNN_dataset_P1c_size_75.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1c_size_75.pdf}
        \caption{KNN on P1c, size $75$.}
        \label{fig:KNN_P1c_75}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/samples_QD_ML_dataset_P1c_size_75.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1c_size_75.pdf}
        \caption{Discriminant, size $75$.}
        \label{fig:KNN_P1c_75}
     \end{subfigure}
@@ -363,25 +367,24 @@ Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dat
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_199.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_199.pdf}
        \caption{QDA on P1c, size $199$.}
        \label{fig:KNN_P1c_199}
     \end{subfigure}
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_KNN_dataset_P1c_size_199.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1c_size_199.pdf}
        \caption{KNN on P1c, size $199$.}
        \label{fig:KNN_P1c_199}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/samples_QD_ML_dataset_P1c_size_199.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1c_size_199.pdf}
        \caption{Discriminant, size $199$.}
        \label{fig:KNN_P1c_199}
     \end{subfigure}
-
 \caption{Bayes classifier and Nearest neighbour classification on P1c dataset.}
 \label{fig:ex11P1c}
 \end{figure}
@@ -421,39 +424,38 @@ Figure \ref{fig:ex12P1b} shows the results for testing the classifier on P1b dat
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/loss_GMM_EM_dataset_P1b_size_199.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/loss_GMM_EM_dataset_P1b_size_199.pdf}
        \caption{Likelihood function: $\btheta$.}
        \label{fig:gmmLoss}
     \end{subfigure}
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_GMM_EM_dataset_P1b_size_199.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_GMM_EM_dataset_P1b_size_199.pdf}
        \caption{GMM on P1b.}
        \label{fig:GMM_P1b}
     \end{subfigure}
 \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_199.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_199.pdf}
        \caption{QDA on P1b.}
        \label{fig:GMM_QDA_P1b}
     \end{subfigure}
 \\
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/samples_GMM_EM_dataset_P1b_size_199.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/samples_GMM_EM_dataset_P1b_size_199.pdf}
        \caption{Discriminant, GMM.}
        \label{fig:GMM_DF_P1b}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.5in]{../results/ex1/samples_QD_ML_dataset_P1b_size_199.pdf}
+       \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1b_size_199.pdf}
        \caption{Discriminant, QDA.}
        \label{fig:QDA_DF_P1b}
     \end{subfigure}
-
 \caption{Bayes classifier learnt using Gaussian mixture model and each class modelled as Gaussian on P1b dataset.}
 \label{fig:ex12P1b}
 \end{figure}
@@ -463,7 +465,50 @@ Figure \ref{fig:ex12P1b} shows the results for testing the classifier on P1b dat
 
 \problem{Problem (1.3) Bayes' Classifier with Exponential Class Conditional}
 \label{prob:1.3}
+Let the class $0$ be modelled as a Gaussian, identical to Problem \ref{prob:1.1}.1 and class $1$ be modelled as independent Exponentials, i.e.:
+\begin{equation}
+	f_{1}(\bx; \lambda_{1}, \lambda_{2}) = \lambda_{1}\lambda_{2} e^{-\lambda_{1}x_{1} -\lambda_{2}x_{2}},
+\label{eq:expConditionalModel}
+\end{equation}
+where the parameters $\lambda_{1}, \lambda_{2}$ are unknowns that are estimated in the training phase using the training data. The maximum-likelihood estimate for the parameters is given by:
+\begin{equation}
+	\lambda_{j} = \frac{n}{\sum_{i=1}^{n} x_{j}^{(i)}}, \; j=1,2,
+\label{eq:mleExp}
+\end{equation}
+where $n$ is the number of samples in the class. The priors are computed similar to \ref{prob:1.1}.1, as ratios of number of samples in the class to total number of samples.
 
+The classifier is trained on the P1c dataset using all the training samples. The trained classifier is tested on the full dataset and the confusion matrix are plotted. The classifier is compared with both class conditionals modelled as Gaussians as in \ref{prob:1.1}.1.
+
+Figure \ref{fig:ex13P1c} shows the results for testing the classifier on P1c dataset. Figure \ref{fig:EXP_P1c} shows the accuracies in the confusion matrix for the classifier with Gaussian and Exponential class distributions. Figure \ref{fig:QDA_EXP_P1c} shows the accuracies in the confusion matrix for the classifier with both classes modelled as Gaussians. Figure \ref{fig:samples_P1c} shows the training samples along with the learnt Gaussian for class $0$. 
+
+\begin{figure}[!htbp]
+\centering
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_EXP_ML_dataset_P1c_size_199.pdf}
+       \caption{Exp-Gaussian on P1c.}
+       \label{fig:EXP_P1c}
+    \end{subfigure}
+\quad
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_199.pdf}
+       \caption{QDA on P1c.}
+       \label{fig:QDA_EXP_P1c}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex1/samples_QD_EXP_ML_dataset_P1c_size_199.pdf}
+       \caption{Samples.}
+       \label{fig:samples_P1c}
+    \end{subfigure}
+\caption{Bayes' classifier with class conditionals as Gaussian and Exponential; and both class conditionals as Gaussians on P1c dataset.}
+\label{fig:ex13P1c}
+\end{figure}
+{\it Inferences}: The performance of the classifier with exponential distribution is poor. The accuracy of classification into class $0$ with Gaussian class conditional is $100\%$ in comparison to the accuracy of classification with both class conditionals as Gaussians and with GMM. However, the accuracy of classification with the exponential distribution is very poor and comparable to a coin-toss classifier. This is expected as the mean of class $1$ is at $[3\; 6]^{\TT}$ and since the class is exponential, the samples are not drawn from a bell-shape. The samples are drawn around $[0\; 0]^{\TT}$ with high probability.
+
+The exponential distribution is not a good model for the class conditional, in this case. This is apparent as we know a priori, the class conditionals are Gaussian. Model mismatch in the modelling of the class conditional explains the poor performance of the classifiers.
 
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -473,9 +518,198 @@ Figure \ref{fig:ex12P1b} shows the results for testing the classifier on P1b dat
 
 \problem{Problem (2) Bayes' Classifier with Gaussian Class Conditionals}
 \label{prob:2}
-
 Let the class conditional distributions be modelled to be multivariate Gaussians. In the training phase, the unknown means and covariances of the Gaussians are estimated from the training data. The model is identical to the setting in Problem \ref{prob:1.1}.1 and the updates for the unknown means and covariances are identical to (\ref{eq:mleGaussian}).
 
+The classifiers are trained on three datasets (P3a, P3b, P3c) with varying training sizes. The trained classifiers are tested on the full test dataset and the accuracies in confusion matrices are plotted. The classifier is compared with the nearest-neighbour classifier.
+
+Figure \ref{fig:ex2P2a} shows the results for testing the classifier on P2a dataset. Figure \ref{fig:QDA_rr20_P2a_50} \ref{fig:QDA_rr20_P2a_100} \ref{fig:QDA_rr20_P2a_300} \ref{fig:QDA_rr20_P2a_999} depicts the accuracies in confusion matrices for the Bayes' classifier, Figures \ref{fig:KNN_rr20_P2a_50} \ref{fig:KNN_rr20_P2a_100} \ref{fig:KNN_rr20_P2a_300} \ref{fig:KNN_rr20_P2a_999} depicts the accuracies in confusion matrices for the nearest-neighbour classifier. Figures \ref{fig:ex2P2b} and \ref{fig:ex2P2c} shows the corresponding results for datasets P2b and P2c, respectively. All the datasets have the same means for the classes, $\bmu_{0} = \boldsymbol{0}$ and $\bmu_{1} = \mathbbm{1}$, but different covariances.
+
+{\it Inferences on P2a}: The covariance matrices of the classes are both equal to the identity matrix. Hence, the discriminability in the data is sufficient and the classifier performs well with sufficient training samples. $10$ samples are insufficient to completely capture the model and the Bayes' classifier performs poorly. The estimated means are not accurate and hence the class conditionals are not accurate. The nearest-neighbour classifier performs well with $10$ samples. With few training samples, the nearest-neighbour classifier is more reliable than the Bayes' classifier. As the number of training samples increase from $10$ to $50$. $100$ and $300$, the performance of the Bayes' classifier beats nearest-neighbour, as in these cases, the MLE converges to the true values. The error in nearest-neighbour classification is at most twice the error in Bayes' classifier, in most cases.
+
+{\it Inferences on P2b}: The covariance matrices of the classes are both equal to three times the identity matrix. Hence, the discriminability in the data is insufficient. The data from either of the classes overlap into the other class. The classifiers perform poorly in relation to P2a, where the discriminability is better. The number of samples taken in the range of $50$-$100$ are not sufficient of risk minimisation for the data with overlapping classes. In this range of training samples, the nearest neighbour classifier performs better than the Bayes' classifier. As the number of training samples increases to the full training data size, the estimation accuracy improves and the accuracy of the classifier improves. Again, when the estimation of the parameters improves, the error in the nearest-neighbour classifier is less than twice the error in Bayes' classifier.
+\begin{figure}[!htbp]
+\centering
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_50.pdf}
+       \caption{QDA on P2a, size $50$.}
+       \label{fig:QDA_rr20_P2a_50}
+    \end{subfigure}
+\quad
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2a_size_50.pdf}
+       \caption{KNN on P2a, size $50$.}
+       \label{fig:KNN_rr20_P2a_50}
+    \end{subfigure}
+\\  
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_100.pdf}
+       \caption{QDA on P2a, size $100$.}
+       \label{fig:QDA_rr20_P2a_100}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2a_size_100.pdf}
+       \caption{KNN on P2a, size $100$.}
+       \label{fig:KNN_rr20_P2a_100}
+    \end{subfigure}
+\\
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_300.pdf}
+       \caption{QDA on P2a, size $300$.}
+       \label{fig:QDA_rr20_P2a_300}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2a_size_300.pdf}
+       \caption{KNN on P2a, size $300$.}
+       \label{fig:KNN_rr20_P2a_300}
+    \end{subfigure}
+\\
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_999.pdf}
+       \caption{QDA on P2a, size $999$.}
+       \label{fig:QDA_rr20_P2a_999}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2a_size_999.pdf}
+       \caption{KNN on P2a, size $999$.}
+       \label{fig:KNN_rr20_P2a_999}
+    \end{subfigure}
+\caption{Bayes classifier and Nearest neighbour classification on P2a dataset.}
+\label{fig:ex2P2a}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_50.pdf}
+       \caption{QDA on P2b, size $50$.}
+       \label{fig:QDA_rr20_P2b_50}
+    \end{subfigure}
+\quad
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2b_size_50.pdf}
+       \caption{KNN on P2b, size $50$.}
+       \label{fig:KNN_rr20_P2b_50}
+    \end{subfigure}
+\\  
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_100.pdf}
+       \caption{QDA on P2b, size $100$.}
+       \label{fig:QDA_rr20_P2b_100}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2b_size_100.pdf}
+       \caption{KNN on P2b, size $100$.}
+       \label{fig:KNN_rr20_P2b_100}
+    \end{subfigure}
+\\
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_300.pdf}
+       \caption{QDA on P2b, size $300$.}
+       \label{fig:QDA_rr20_P2b_300}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2b_size_300.pdf}
+       \caption{KNN on P2b, size $300$.}
+       \label{fig:KNN_rr20_P2b_300}
+    \end{subfigure}
+\\
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_999.pdf}
+       \caption{QDA on P2b, size $999$.}
+       \label{fig:QDA_rr20_P2b_999}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2b_size_999.pdf}
+       \caption{KNN on P2b, size $999$.}
+       \label{fig:KNN_rr20_P2b_999}
+    \end{subfigure}
+\caption{Bayes classifier and Nearest neighbour classification on P2b dataset.}
+\label{fig:ex2P2b}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_50.pdf}
+       \caption{QDA on P2c, size $50$.}
+       \label{fig:QDA_rr20_P2c_50}
+    \end{subfigure}
+\quad
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2c_size_50.pdf}
+       \caption{KNN on P2c, size $50$.}
+       \label{fig:KNN_rr20_P2c_50}
+    \end{subfigure}
+\\  
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_100.pdf}
+       \caption{QDA on P2c, size $100$.}
+       \label{fig:QDA_rr20_P2c_100}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2c_size_100.pdf}
+       \caption{KNN on P2c, size $100$.}
+       \label{fig:KNN_rr20_P2c_100}
+    \end{subfigure}
+\\
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_300.pdf}
+       \caption{QDA on P2c, size $300$.}
+       \label{fig:QDA_rr20_P2c_300}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2c_size_300.pdf}
+       \caption{KNN on P2c, size $300$.}
+       \label{fig:KNN_rr20_P2c_300}
+    \end{subfigure}
+\\
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_999.pdf}
+       \caption{QDA on P2c, size $999$.}
+       \label{fig:QDA_rr20_P2c_999}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2c_size_999.pdf}
+       \caption{KNN on P2c, size $999$.}
+       \label{fig:KNN_rr20_P2c_999}
+    \end{subfigure}
+\caption{Bayes classifier and Nearest neighbour classification on P2c dataset.}
+\label{fig:ex2P2c}
+\end{figure}
+{\it Inferences on P2c}: The covariance matrices of the classes are both random matrices with ones on the diagonal. The data in the classes can have different orientations, in which case the discriminability in the data is large. The classifiers perform well suggesting that classes indeed have different orientations. In this case, the classifier performs well with $99\%$ accuracy with training size as low as $100$ samples. The nearest-neighbour classifier does perform better in the case with $50$ training samples. With larger training size, the error in classification using nearest-neighbour classifier is around twice the error in Bayes' classifier.
 
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -486,12 +720,111 @@ Let the class conditional distributions be modelled to be multivariate Gaussians
 \problem{Problem (3) Bayes' Classifier Trained using Gaussian Mixture Model}
 \label{prob:3}
 
+\begin{figure}[!htbp]
+\centering
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex3/conf_mtx_KNN_dataset_P3a_size_199.pdf}
+       \caption{KNN on P3a.}
+       \label{fig:KNN_P3a}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex3/conf_mtx_QD_ML_dataset_P3a_size_199.pdf}
+       \caption{QDA on P3a.}
+       \label{fig:QDA_P3a}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex3/samples_QD_ML_dataset_P3a_size_199.pdf}
+       \caption{Samples. QDA.}
+       \label{fig:DF_QDA_P3a}
+    \end{subfigure}
+\\
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex3/conf_mtx_GMM_dataset_P3a_size_199.pdf}
+       \caption{GMM on P3a.}
+       \label{fig:GMM_P3a}
+    \end{subfigure}
+\quad
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex3/samples_GMM_EM_dataset_P3a_size_199.pdf}
+       \caption{Samples, GMM.}
+       \label{fig:GMM_DF_P3a}
+    \end{subfigure}
+\caption{.}
+\label{fig:ex3P3a}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex3/conf_mtx_KNN_dataset_P3b_size_199.pdf}
+       \caption{KNN on P3b.}
+       \label{fig:KNN_P3b}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex3/conf_mtx_QD_ML_dataset_P3b_size_199.pdf}
+       \caption{QDA on P3b.}
+       \label{fig:QDA_P3b}
+    \end{subfigure}
+\quad    
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex3/samples_QD_ML_dataset_P3b_size_199.pdf}
+       \caption{Samples. QDA.}
+       \label{fig:DF_QDA_P3b}
+    \end{subfigure}
+\\
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex3/conf_mtx_GMM_dataset_P3b_size_199.pdf}
+       \caption{GMM on P3b.}
+       \label{fig:GMM_P3b}
+    \end{subfigure}
+\quad
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex3/samples_GMM_EM_dataset_P3b_size_199.pdf}
+       \caption{Samples, GMM.}
+       \label{fig:GMM_DF_P3b}
+    \end{subfigure}
+\caption{.}
+\label{fig:ex3P3b}
+\end{figure}
+
 
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 \section{Naive Bayes' Classifier for Document Classification}
 \label{sec:docClassification}
+
+\begin{figure}[!htbp]
+\centering
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex4/conf_mtx_bog.pdf}
+       \caption{Bag of Words.}
+       \label{fig:bog}
+    \end{subfigure}
+\quad
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex4/conf_mtx_tfidf.pdf}
+       \caption{TF-IDF.}
+       \label{fig:tfidf}
+    \end{subfigure}
+\caption{.}
+\label{fig:ex4}
+\end{figure}
 
 
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
