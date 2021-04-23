@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.20)  23 APR 2021 00:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.11.20)  23 APR 2021 02:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1413,7 +1413,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 501.
 Here is how much of TeX's memory you used:
  18844 strings out of 480608
  359445 string characters out of 5903629
- 606822 words of memory out of 5000000
+ 606823 words of memory out of 5000000
  34292 multiletter control sequences out of 15000+600000
  551941 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1442,7 +1442,7 @@ onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2020/texmf-dist/font
 s/type1/public/lm/lmssbx10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msbm10.pfb>
-Output written on bayes.pdf (8 pages, 788012 bytes).
+Output written on bayes.pdf (8 pages, 788290 bytes).
 PDF statistics:
  686 PDF objects out of 1000 (max. 8388607)
  557 compressed objects within 6 object streams

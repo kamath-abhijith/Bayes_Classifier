@@ -248,6 +248,33 @@ def score_gaussian_conditionals(x, mu, sigma, prior):
     return -(np.log(prior) - (1.0/2.0)*np.log(np.linalg.det(pres)) - \
          (1.0/2.0)*(x-mu).T @ pres @ (x-mu)).flatten()[0]
 
+def score_ex13(x, means, covs, lambds, priors):
+    '''
+    Returns the label for x with class 1, Gaussian
+    and class 2, Exponential
+
+    :param x: test feature
+    :param means: mean of the Gaussian class
+    :param covs: covariance of the Gaussian class
+    :param lambd: lambda parameter of the Exponential class
+    :param priors: priors of the class
+
+    :return: class label for feature x
+
+    '''
+
+    lambd = lambds[1]
+
+    gaussian_prob = priors[0]*multivariate_normal.pdf(x, \
+        means[0], covs[0])
+
+    exp_prob = lambd[0]*lambd[1]*np.exp(-1.0*sum(lambd*x))
+
+    if gaussian_prob > exp_prob:
+        return 1
+    else:
+        return 0
+
 def score_gmm(x, means, covs, priors):
     '''
     Returns the score for x belonging to class
@@ -392,6 +419,34 @@ def train_gaussian_conditionals(data):
 
     return pos_mean, neg_mean, pos_cov, neg_cov, pos_prior, neg_prior
 
+def train_exp_conditionals(data):
+    '''
+    Trains 2 class classifier with independent
+    Exponential class conditionals
+
+    :param data: training data
+    :return: learnt lambda and priors of the classes
+
+    '''
+
+    num_samples, dim = data.shape
+    labels = data[:,dim-1]
+
+    pos_samples = data[np.where(labels==1)][:,:dim-1]
+    num_pos_samples = pos_samples.shape[0]
+
+    neg_samples = data[np.where(labels==-1)][:,:dim-1]
+    num_neg_samples = neg_samples.shape[0]
+
+    pos_prior = num_pos_samples/num_samples
+    neg_prior = num_neg_samples/num_samples
+
+    # Compute lambda parameters using MLE
+    pos_lambda = 1.0/np.mean(pos_samples, axis=0)
+    neg_lambda = 1.0/np.mean(neg_samples, axis=0)
+
+    return pos_lambda, neg_lambda, pos_prior, neg_prior
+
 def train_gmm(data, num_components, max_iter=100, tol=1e-3):
     '''
     Trains Gaussian Mixture Model using data
@@ -446,7 +501,6 @@ def test_gaussian_conditionals(data, mean, cov, prior):
     dim = data.shape[1]
     true_labels = (data[:,dim-1]+1)/2       # Change labels to 0-1
 
-    
     num_samples = data[:,:dim-1].shape[0]
     num_classes = len(mean)
 
@@ -457,6 +511,39 @@ def test_gaussian_conditionals(data, mean, cov, prior):
                 mean[classes], cov[classes], prior[classes]))
 
     predicted_labels = np.argmax(score, axis=1)
+
+    confusion_mtx = np.zeros((num_classes, num_classes))
+    for i in range(num_classes):
+        for j in range(num_classes):
+            confusion_mtx[i,j] = sum((true_labels==i) & (predicted_labels==j))
+
+    return num_classes*confusion_mtx/num_samples
+
+def test_gaussian_exp_conditionals(data, means, covs, lambd, priors):
+    '''
+    Tests 2 class classifier with class 1, Gaussian
+    and class 2, Exponential
+
+    :param data: test data
+    :param means: mean of the Gaussian class
+    :param covs: covariance of the Gaussian class
+    :param lambd: lambda parameter of the Exponential class
+    :param priors: class priors
+
+    :returns accuracy for test data
+
+    '''
+
+    dim = data.shape[1]
+    true_labels = (data[:,dim-1]+1)/2       # Change labels to 0-1
+
+    num_samples = data[:,:dim-1].shape[0]
+    num_classes = len(means)
+
+    predicted_labels = np.zeros(num_samples)
+    for i in tqdm(range(num_samples)):
+        predicted_labels[i] = score_ex13(data[i,:dim-1], means, covs,
+            lambd, priors)
 
     confusion_mtx = np.zeros((num_classes, num_classes))
     for i in range(num_classes):
