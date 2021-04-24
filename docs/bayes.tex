@@ -1,6 +1,6 @@
-\documentclass[11pt, a4 paper]{article}
+\documentclass[12pt, a4 paper]{article}
 % Set target color model to RGB
-\usepackage[inner=2.0cm,outer=2.0cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[inner=2.5cm,outer=2.5cm,top=3cm,bottom=3cm]{geometry}
 \usepackage{setspace}
 \usepackage{verbatim}
 \usepackage{subcaption}
@@ -56,7 +56,7 @@ pdfproducer={PDFLaTeX},%
 \section*{Introduction}
 \label{sec:intro}
 
-Let patterns be in $\rr^d$ and consider the $2$-class classification problem -- given a pattern $\bx$, classify the pattern into a class with label $y$. In Bayesian classification theory, the training data $\{\bx^{(i)}, y^{(i)}\}_{i=1}^n$ is viewed to be i.i.d samples of the random vector $(\bX, Y)$. The training samples are used to model the joint distribution of the random vector $(\bX, Y)$.
+Let patterns be in $\rr^d$ and consider the $2$-class classification problem -- given a pattern $\bx$, classify the pattern into a class with label $y$. In Bayesian classification theory, the training data $\{\bx^{(i)}, y^{(i)}\}_{i=1}^n$ is viewed to be i.i.d samples of the random vector $(\bX, Y)$. The training samples are used to model the joint distribution of the random vector $(\bX, Y)$. \\
 
 Let $\Pr(C_i) = p_i$ be the priors associated with the $i$th class, $i=0,1$; and let $f_i(\bx) = p_{\bX\vert Y}(\bx \vert y=i)$ be the class-conditional densities. Using the Bayes' rule and the training data, the update on the probabilities of the classes as:
 \begin{equation}
@@ -89,7 +89,7 @@ The resulting Bayes classifier, using (\ref{eq:bayesClassifier}) results in a qu
 	\frac{1}{2}\bx^\TT\left( \bSigma_1^{0} - \bSigma_{0}^{-1} \right)\bx - (\bW_{1} - \bW_{0})^{\TT}\bx + w_{1}-w_{0} = 0,
 \label{eq:QDA}
 \end{equation}
-where $\bW_{i} = \bSigma_i^{-1}\bmu_i$ and $\displaystyle w_{i} = \frac{1}{2} \bmu_i^\TT \bSigma_i^{-1} \bmu_i - \ln \left( p_{i} \right) + \frac{1}{2}\ln \left( \det \bSigma_i \right)$. The quantities $\frac{1}{2}\bx^\TT \bSigma_i^{-1} \bx - \bW_{i}^{\TT}\bx + w_{i}$ are defined to be the score functions for class $i$, such that the multiclass extension of the $2$-class model picks the class with the least score.
+where $\bW_{i} = \bSigma_i^{-1}\bmu_i$ and $\displaystyle w_{i} = \frac{1}{2} \bmu_i^\TT \bSigma_i^{-1} \bmu_i - \ln \left( p_{i} \right) + \frac{1}{2}\ln \left( \det \bSigma_i \right)$. The quantities $\frac{1}{2}\bx^\TT \bSigma_i^{-1} \bx - \bW_{i}^{\TT}\bx + w_{i}$ are defined to be the score functions for class $i$, such that the multiclass extension of the $2$-class model picks the class with the least score. \\
 
 To implement this classifier, the means $\bmu_{i}$ and the covariances $\bSigma_{i}$ are to be estimated from the training data. The maximum likelihood estimators (MLE) for the mean and the covariance, given training samples $\{\bx^{(i)}, y^{(i)}\}_{i=1}^n$ are given by the sample mean and the sample covariance:
 \begin{equation}
@@ -99,100 +99,100 @@ To implement this classifier, the means $\bmu_{i}$ and the covariances $\bSigma_
 \end{split}
 \label{eq:mleGaussian}
 \end{equation}
-where $n_{i}$ are the number of samples in class $i$. The priors are taken to be the ratios $n_{i}/n$.
+where $n_{i}$ are the number of samples in class $i$. The priors are taken to be the ratios $n_{i}/n$. \\
 
-The classifier is trained on three datasets (P1a, P1b, P1c) with varying training sizes. The trained classifiers are tested on the full test dataset and the confusion matrix and the discriminant functions are plotted. The classifier is compared with the nearest-neighbour classifier.
+\underline {\it \bfseries Implementation}: The classifier is trained on three datasets (P1a, P1b, P1c) with varying training sizes. The trained classifiers are tested on the full test dataset and the confusion matrix and the discriminant functions are plotted. The classifier is compared with the nearest-neighbour classifier. \\
 
-Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dataset. Figures \ref{fig:QDA_P1a_10}, \ref{fig:QDA_P1a_25}, \ref{fig:QDA_P1a_75}, \ref{fig:QDA_P1a_199} depicts the accuracies in the confusion matrices for the Bayes' classifier, Figures \ref{fig:KNN_P1a_10}, \ref{fig:KNN_P1a_25}, \ref{fig:KNN_P1a_75}, \ref{fig:KNN_P1a_199} depicts the accuracies in the confusion matrices of the nearest-neighbour classifer and Figures \ref{fig:DF_P1a_10}, \ref{fig:DF_P1a_25}, \ref{fig:DF_P1a_75}, \ref{fig:DF_P1a_199} shows the training samples (red samples in class $0$, green samples in class $1$), the $3-\sigma$ Gaussian learnt from the training samples (ellipses of the corresponding colours), and the quadratic discriminant function (black). Figures \ref{fig:ex11P1b} and \ref{fig:ex11P1c} shows the corresponding figures for datasets P1b and P1c, respectively.
+\underline {\it \bfseries Results}: Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dataset. Figures \ref{fig:QDA_P1a_10}, \ref{fig:QDA_P1a_25}, \ref{fig:QDA_P1a_75}, \ref{fig:QDA_P1a_199} depicts the accuracies in the confusion matrices for the Bayes' classifier, Figures \ref{fig:KNN_P1a_10}, \ref{fig:KNN_P1a_25}, \ref{fig:KNN_P1a_75}, \ref{fig:KNN_P1a_199} depicts the accuracies in the confusion matrices of the nearest-neighbour classifer and Figures \ref{fig:DF_P1a_10}, \ref{fig:DF_P1a_25}, \ref{fig:DF_P1a_75}, \ref{fig:DF_P1a_199} shows the training samples (red samples in class $0$, green samples in class $1$), the $3-\sigma$ Gaussian learnt from the training samples (ellipses of the corresponding colours), and the quadratic discriminant function (black). Figures \ref{fig:ex11P1b} and \ref{fig:ex11P1c} shows the corresponding figures for datasets P1b and P1c, respectively. \\
 
-{\it Inferences on P1a}: The class means are $\bmu_{0} = [0 \; 0]^{\TT}$ and $\bmu_{1} = [1 \; 1]^{\TT}$, and the covariances are in the same order. The class distributions are ``very close''. i.e., they have low discriminability. This is seen with the training samples from each class overlapping into the other class. Within this setting, the classifiers trained with training sizes $10$, $25$, $75$, and $199$ on the average show, show an increasing trend in test accuracy. The nearest-neighbour classifier performs comparably to the Bayes' classifier. In no case, the error in classification using nearest-neighbour classifier exceeds twice the error in the Bayes' classifier. With increasing size of the training set, the learnt Gaussians are observed to learn ``better'', i.e., the means and covariances are closer to the true values. This shows that MLE is consistent.
+\underline {\it \bfseries Inferences on P1a}: The class means are $\bmu_{0} = [0 \; 0]^{\TT}$ and $\bmu_{1} = [1 \; 1]^{\TT}$, and the covariances are in the same order. The class distributions are ``very close''. i.e., they have low discriminability. This is seen with the training samples from each class overlapping into the other class. Within this setting, the classifiers trained with training sizes $10$, $25$, $75$, and $199$ on the average show, show an increasing trend in test accuracy. The nearest-neighbour classifier performs comparably to the Bayes' classifier. In no case, the error in classification using nearest-neighbour classifier exceeds twice the error in the Bayes' classifier. With increasing size of the training set, the learnt Gaussians are observed to learn ``better'', i.e., the means and covariances are closer to the true values. This shows that MLE is consistent. \\
 \begin{figure}[!htbp]
 \centering
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_10.pdf}
-       \caption{QDA on P1a, size $10$.}
+       \caption{QDA, size $10$.}
        \label{fig:QDA_P1a_10}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1a_size_10.pdf}
-       \caption{KNN on P1a, size $10$.}
+       \caption{KNN, size $10$.}
        \label{fig:KNN_P1a_10}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1a_size_10.pdf}
-       \caption{Discriminant, size $10$.}
+       \caption{Samples, size $10$.}
        \label{fig:DF_P1a_10}
     \end{subfigure}
     
-\quad    
+\quad \quad 
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_25.pdf}
-       \caption{QDA on P1a, size $25$.}
+       \caption{QDA, size $25$.}
        \label{fig:QDA_P1a_25}
     \end{subfigure}
-\quad    
+\quad \quad 
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1a_size_25.pdf}
-       \caption{KNN on P1a, size $25$.}
+       \caption{KNN, size $25$.}
        \label{fig:KNN_P1a_25}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1a_size_25.pdf}
-       \caption{Discriminant, size $25$.}
+       \caption{Samples, size $25$.}
        \label{fig:DF_P1a_25}
     \end{subfigure}
     
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_75.pdf}
-       \caption{QDA on P1a, size $75$.}
+       \caption{QDA, size $75$.}
        \label{fig:QDA_P1a_75}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1a_size_75.pdf}
-       \caption{KNN on P1a, size $75$.}
+       \caption{KNN, size $75$.}
        \label{fig:KNN_P1a_75}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1a_size_75.pdf}
-       \caption{Discriminant, size $75$.}
+       \caption{Samples, size $75$.}
        \label{fig:DF_P1a_75}
     \end{subfigure}
     
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1a_size_199.pdf}
-       \caption{QDA on P1a, size $199$.}
+       \caption{QDA, size $199$.}
        \label{fig:QDA_P1a_199}
     \end{subfigure}
-\quad    
+\quad \quad 
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1a_size_199.pdf}
-       \caption{KNN on P1a, size $199$.}
+       \caption{KNN, size $199$.}
        \label{fig:KNN_P1a_199}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1a_size_199.pdf}
-       \caption{Discriminant, size $199$.}
+       \caption{Samples, size $199$.}
        \label{fig:DF_P1a_199}
     \end{subfigure}
 
@@ -200,95 +200,95 @@ Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dat
 \label{fig:ex11P1a}
 \end{figure}
 
-{\it Inferences on P1b}: The class means are $\bmu_{0} = [0 \; 0]^{\TT}$ and $\bmu_{1} = [3 \; 3]^{\TT}$, and the covariances are in the same order. The class distributions are farther apart, i.e., the discriminability is higher than in P1a. This is seen with the training samples from each class barely overlapping into the other class. Within this setting, the classifiers trained with training sizes $10$, $25$, $75$, and $199$ on the average show, show an increasing trend in test accuracy. The nearest-neighbour classifier performs comparably to the Bayes' classifier. In no case, the error in classification using nearest-neighbour classifier exceeds twice the error in the Bayes' classifier. With increasing size of the training set, the learnt Gaussians is observed to learn ``better'', i.e., the means and covariances are closer to the true values.
+\underline {\it \bfseries Inferences on P1b}: The class means are $\bmu_{0} = [0 \; 0]^{\TT}$ and $\bmu_{1} = [3 \; 3]^{\TT}$, and the covariances are in the same order. The class distributions are farther apart, i.e., the discriminability is higher than in P1a. This is seen with the training samples from each class barely overlapping into the other class. Within this setting, the classifiers trained with training sizes $10$, $25$, $75$, and $199$ on the average show, show an increasing trend in test accuracy. The nearest-neighbour classifier performs comparably to the Bayes' classifier. In no case, the error in classification using nearest-neighbour classifier exceeds twice the error in the Bayes' classifier. With increasing size of the training set, the learnt Gaussians is observed to learn ``better'', i.e., the means and covariances are closer to the true values. \\
 
 \begin{figure}[!htbp]
 \centering
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_10.pdf}
-       \caption{QDA on P1b, size $10$.}
+       \caption{QDA, size $10$.}
        \label{fig:QDA_P1b_10}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1b_size_10.pdf}
-       \caption{KNN on P1b, size $10$.}
+       \caption{KNN, size $10$.}
        \label{fig:KNN_P1b_10}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1b_size_10.pdf}
-       \caption{Discriminant, size $10$.}
+       \caption{Samples, size $10$.}
        \label{fig:KNN_P1b_10}
     \end{subfigure}
     
-\quad    
+\quad \quad 
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_25.pdf}
-       \caption{QDA on P1b, size $25$.}
+       \caption{QDA, size $25$.}
        \label{fig:KNN_P1b_25}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1b_size_25.pdf}
-       \caption{KNN on P1b, size $25$.}
+       \caption{KNN, size $25$.}
        \label{fig:KNN_P1b_25}
     \end{subfigure}
 \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1b_size_25.pdf}
-       \caption{Discriminant, size $25$.}
+       \caption{Samples, size $25$.}
        \label{fig:KNN_P1b_25}
     \end{subfigure}
     
-\quad    
+\quad \quad 
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_75.pdf}
-       \caption{QDA on P1b, size $75$.}
+       \caption{QDA, size $75$.}
        \label{fig:KNN_P1b_75}
     \end{subfigure}
-\quad    
+\quad \quad   
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1b_size_75.pdf}
-       \caption{KNN on P1b, size $75$.}
+       \caption{KNN, size $75$.}
        \label{fig:KNN_P1b_75}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1b_size_75.pdf}
-       \caption{Discriminant, size $75$.}
+       \caption{Samples, size $75$.}
        \label{fig:KNN_P1b_75}
     \end{subfigure}
     
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_199.pdf}
-       \caption{QDA on P1b, size $199$.}
+       \caption{QDA, size $199$.}
        \label{fig:KNN_P1b_199}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1b_size_199.pdf}
-       \caption{KNN on P1b, size $199$.}
+       \caption{KNN, size $199$.}
        \label{fig:KNN_P1b_199}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1b_size_199.pdf}
-       \caption{Discriminant, size $199$.}
+       \caption{Samples, size $199$.}
        \label{fig:KNN_P1b_199}
     \end{subfigure}
 
@@ -298,97 +298,97 @@ Figure \ref{fig:ex11P1a} shows the results for testing the classifier on P1a dat
 
 \begin{figure}[!htbp]
 \centering
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_10.pdf}
-       \caption{QDA on P1c, size $10$.}
+       \caption{QDA, size $10$.}
        \label{fig:QDA_P1c_10}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1c_size_10.pdf}
-       \caption{KNN on P1c, size $10$.}
+       \caption{KNN, size $10$.}
        \label{fig:KNN_P1c_10}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1c_size_10.pdf}
-       \caption{Discriminant, size $10$.}
+       \caption{Samples, size $10$.}
        \label{fig:KNN_P1c_10}
     \end{subfigure}
     
-\quad    
+\quad \quad   
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_25.pdf}
-       \caption{QDA on P1c, size $25$.}
+       \caption{QDA, size $25$.}
        \label{fig:KNN_P1c_25}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1c_size_25.pdf}
-       \caption{KNN on P1c, size $25$.}
+       \caption{KNN, size $25$.}
        \label{fig:KNN_P1c_25}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1c_size_25.pdf}
-       \caption{Discriminant, size $25$.}
+       \caption{Samples, size $25$.}
        \label{fig:KNN_P1c_25}
     \end{subfigure}
     
-\quad    
+\quad \quad 
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_75.pdf}
-       \caption{QDA on P1c, size $75$.}
+       \caption{QDA, size $75$.}
        \label{fig:KNN_P1c_75}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1c_size_75.pdf}
-       \caption{KNN on P1c, size $75$.}
+       \caption{KNN, size $75$.}
        \label{fig:KNN_P1c_75}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1c_size_75.pdf}
-       \caption{Discriminant, size $75$.}
+       \caption{Samples, size $75$.}
        \label{fig:KNN_P1c_75}
     \end{subfigure}
     
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_199.pdf}
-       \caption{QDA on P1c, size $199$.}
+       \caption{QDA, size $199$.}
        \label{fig:KNN_P1c_199}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_KNN_dataset_P1c_size_199.pdf}
-       \caption{KNN on P1c, size $199$.}
+       \caption{KNN, size $199$.}
        \label{fig:KNN_P1c_199}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1c_size_199.pdf}
-       \caption{Discriminant, size $199$.}
+       \caption{Samples, size $199$.}
        \label{fig:KNN_P1c_199}
     \end{subfigure}
 \caption{Bayes classifier and Nearest neighbour classification on P1c dataset.}
 \label{fig:ex11P1c}
 \end{figure}
-{\it Inferences on P1c}: The class means are $\bmu_{0} = [0 \; 0]^{\TT}$ and $\bmu_{1} = [3 \; 6]^{\TT}$, and the covariances are in the same order. The class distributions are far apart, i.e., the discriminability is high. This is seen with the training samples from each class not overlapping into the other class. Within this setting, the classifiers trained with training sizes $10$, $25$, $75$, and $199$ on the average show, show an increasing trend in test accuracy. In the case where all the training samples are used, the accuracy in classification on the test data is $99\%$. When the data distributions are well separated, risk minimisation is achieved with training sample size as small as $199$ pairs. The nearest-neighbour classifier performs comparably to the Bayes' classifier. In most cases, the error in classification using nearest-neighbour classifier does not exceed twice the error in the Bayes' classifier. With increasing size of the training set, the learnt Gaussians is observed to learn ``better'', i.e., the means and covariances are closer to the true values.
+\underline {\it \bfseries Inferences on P1c}: The class means are $\bmu_{0} = [0 \; 0]^{\TT}$ and $\bmu_{1} = [3 \; 6]^{\TT}$, and the covariances are in the same order. The class distributions are far apart, i.e., the discriminability is high. This is seen with the training samples from each class not overlapping into the other class. Within this setting, the classifiers trained with training sizes $10$, $25$, $75$, and $199$ on the average show, show an increasing trend in test accuracy. In the case where all the training samples are used, the accuracy in classification on the test data is $99\%$. When the data distributions are well separated, risk minimisation is achieved with training sample size as small as $199$ pairs. The nearest-neighbour classifier performs comparably to the Bayes' classifier. In most cases, the error in classification using nearest-neighbour classifier does not exceed twice the error in the Bayes' classifier. With increasing size of the training set, the learnt Gaussians is observed to learn ``better'', i.e., the means and covariances are closer to the true values. \\
 
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -399,7 +399,9 @@ Let the distribution of the data be modelled to be a mixture of two Gaussians. H
 	f(\bx; \btheta) = \sum_{i=0}^{1} \lambda_{i} f_{i}(\bx; \bmu_{i}, \bSigma_{i}),
 \label{eq:gmmModel}
 \end{equation}
-where $f_{i}$ are Gaussians as in (\ref{eq:mvGaussian}) and $\btheta = [\lambda_{0} \; \lambda_{1} \; \bmu_{0} \; \bmu_{1} \; \bSigma_{0} \; \bSigma_{1}]$ is the vector of unknowns to be estimated during the training phase using the training samples. The maximum likelihood estimation (MLE) is performed using the expectation maximisation (EM) algorithm. The E-step updates the weight matrix:
+where $f_{i}$ are Gaussians as in (\ref{eq:mvGaussian}) and $\btheta = [\lambda_{0} \; \lambda_{1} \; \bmu_{0} \; \bmu_{1} \; \bSigma_{0} \; \bSigma_{1}]$ is the vector of unknowns to be estimated during the training phase using the training samples. \\
+
+\underline {\it \bfseries Implementation}: The maximum likelihood estimation (MLE) is performed using the expectation maximisation (EM) algorithm. The E-step updates the weight matrix:
 \begin{equation}
 	\gamma_{i,j}^{(k+1)} = \frac{\lambda_{j}^{(k+1)} f_{i}(\bx^{(i)}; \bmu_{j}^{(k+1)}, \bSigma_{j}^{{(k+1)}})}{\sum_{m=0}^{1} \lambda_{m}^{(k+1)} f_{i}(\bx^{(i)}; \bmu_{m}^{(k+1)}, \bSigma_{m}^{(k+1)})},
 \label{eq:estep}
@@ -413,11 +415,9 @@ where the $(k+1)$st update for the priors, means and covariances are obtained in
 \end{split}
 \label{eq:mstep}
 \end{equation}
-Each component in Gaussian mixture is considered to be the class conditional and the corresponding Bayes' classifier in (\ref{eq:bayesClassifier}) is tested on the test dataset.
+Each component in Gaussian mixture is considered to be the class conditional and the corresponding Bayes' classifier in (\ref{eq:bayesClassifier}) is tested on the test dataset. The classifier is trained on the P1b dataset using all training samples. The trained classifier is tested in the full test dataset and the confusion matrix and the discriminant functions are plotted. The classifier is compared with the class conditional modelled as Gaussians as in Problem \ref{prob:1.1}.1. \\
 
-The classifier is trained on the P1b dataset using all training samples. The trained classifier is tested in the full test dataset and the confusion matrix and the discriminant functions are plotted. The classifier is compared with the class conditional modelled as Gaussians as in Problem \ref{prob:1.1}.1.
-
-Figure \ref{fig:ex12P1b} shows the results for testing the classifier on P1b dataset. Figure \ref{fig:gmmLoss} shows the log-likelihood function for the parameter vector $\btheta$. Figures \ref{fig:GMM_P1b} and \ref{fig:GMM_QDA_P1b} shows the accuracies in the confusion matrix for the classifier trained with GMM and individual Gaussian classes, respectively. Figures \ref{fig:GMM_DF_P1b} and \ref{fig:QDA_DF_P1b} show the training samples (red samples in class 0, green samples in class 1), the $3-\sigma$ Gaussian learnt from the training samples (ellipses of the corresponding colours), and the quadratic discriminant function (black).
+\underline {\it \bfseries Results}: Figure \ref{fig:ex12P1b} shows the results for testing the classifier on P1b dataset. Figure \ref{fig:gmmLoss} shows the log-likelihood function $\ell(\btheta) = \ln f(\bx; \btheta)$ for the parameter vector $\btheta$. Figures \ref{fig:GMM_P1b} and \ref{fig:GMM_QDA_P1b} shows the accuracies in the confusion matrix for the classifier trained with GMM and individual Gaussian classes, respectively. Figures \ref{fig:GMM_DF_P1b} and \ref{fig:QDA_DF_P1b} show the training samples (red samples in class 0, green samples in class 1), the $3-\sigma$ Gaussian learnt from the training samples (ellipses of the corresponding colours), and the quadratic discriminant function (black).
 
 \begin{figure}[!htbp]
 \centering
@@ -425,41 +425,41 @@ Figure \ref{fig:ex12P1b} shows the results for testing the classifier on P1b dat
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/loss_GMM_EM_dataset_P1b_size_199.pdf}
-       \caption{Likelihood function: $\btheta$.}
+       \caption{$\ell(\btheta)$.}
        \label{fig:gmmLoss}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_GMM_EM_dataset_P1b_size_199.pdf}
-       \caption{GMM on P1b.}
+       \caption{GMM.}
        \label{fig:GMM_P1b}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1b_size_199.pdf}
-       \caption{QDA on P1b.}
+       \caption{QDA.}
        \label{fig:GMM_QDA_P1b}
     \end{subfigure}
 \\
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_GMM_EM_dataset_P1b_size_199.pdf}
-       \caption{Discriminant, GMM.}
+       \caption{Samples, GMM.}
        \label{fig:GMM_DF_P1b}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_QD_ML_dataset_P1b_size_199.pdf}
-       \caption{Discriminant, QDA.}
+       \caption{Samples, QDA.}
        \label{fig:QDA_DF_P1b}
     \end{subfigure}
 \caption{Bayes classifier learnt using Gaussian mixture model and each class modelled as Gaussian on P1b dataset.}
 \label{fig:ex12P1b}
 \end{figure}
-{\it Inferences}: Figure \ref{fig:gmmLoss} shows the log-likelihood function for $\btheta$ and it can be observed that the EM algorithm maximises the log-likelihood and convergence is achieved in $34$ iterations. Since the entire data distribution is learnt together using GMM, the learning is unsupervised; whereas modelling each class as a Gaussian requires the class labels and is hence supervised. However, the knowledge of the number of components is necessary for training using GMM. The accuracies on the test data using GMM are comparable to the accuracies on the test data using supervised training, and the discriminant functions obtained are also similar.
+\underline {\it \bfseries Inferences}: Figure \ref{fig:gmmLoss} shows the log-likelihood function for $\btheta$ and it can be observed that the EM algorithm maximises the log-likelihood and convergence is achieved in $34$ iterations. Since the entire data distribution is learnt together using GMM, the learning is unsupervised; whereas modelling each class as a Gaussian requires the class labels and is hence supervised. However, the knowledge of the number of components is necessary for training using GMM. The accuracies on the test data using GMM are comparable to the accuracies on the test data using supervised training, and the discriminant functions obtained are also similar.
 
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -470,33 +470,33 @@ Let the class $0$ be modelled as a Gaussian, identical to Problem \ref{prob:1.1}
 	f_{1}(\bx; \lambda_{1}, \lambda_{2}) = \lambda_{1}\lambda_{2} e^{-\lambda_{1}x_{1} -\lambda_{2}x_{2}},
 \label{eq:expConditionalModel}
 \end{equation}
-where the parameters $\lambda_{1}, \lambda_{2}$ are unknowns that are estimated in the training phase using the training data. The maximum-likelihood estimate for the parameters is given by:
+where the parameters $\lambda_{1}, \lambda_{2}$ are unknowns that are estimated in the training phase using the training data. \\
+
+\underline{\it \bfseries Implementation}: The maximum-likelihood estimate for the parameters is given by:
 \begin{equation}
 	\lambda_{j} = \frac{n}{\sum_{i=1}^{n} x_{j}^{(i)}}, \; j=1,2,
 \label{eq:mleExp}
 \end{equation}
-where $n$ is the number of samples in the class. The priors are computed similar to \ref{prob:1.1}.1, as ratios of number of samples in the class to total number of samples.
+where $n$ is the number of samples in the class. The priors are computed similar to \ref{prob:1.1}.1, as ratios of number of samples in the class to total number of samples. The classifier is trained on the P1c dataset using all the training samples. The trained classifier is tested on the full dataset and the confusion matrix are plotted. The classifier is compared with both class conditionals modelled as Gaussians as in \ref{prob:1.1}.1. \\
 
-The classifier is trained on the P1c dataset using all the training samples. The trained classifier is tested on the full dataset and the confusion matrix are plotted. The classifier is compared with both class conditionals modelled as Gaussians as in \ref{prob:1.1}.1.
-
-Figure \ref{fig:ex13P1c} shows the results for testing the classifier on P1c dataset. Figure \ref{fig:EXP_P1c} shows the accuracies in the confusion matrix for the classifier with Gaussian and Exponential class distributions. Figure \ref{fig:QDA_EXP_P1c} shows the accuracies in the confusion matrix for the classifier with both classes modelled as Gaussians. Figure \ref{fig:samples_P1c} shows the training samples along with the learnt Gaussian for class $0$. 
+\underline{\it \bfseries Results}: Figure \ref{fig:ex13P1c} shows the results for testing the classifier on P1c dataset. Figure \ref{fig:EXP_P1c} shows the accuracies in the confusion matrix for the classifier with Gaussian and Exponential class distributions. Figure \ref{fig:QDA_EXP_P1c} shows the accuracies in the confusion matrix for the classifier with both classes modelled as Gaussians. Figure \ref{fig:samples_P1c} shows the training samples along with the learnt Gaussian for class $0$. \\
 
 \begin{figure}[!htbp]
 \centering
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_EXP_ML_dataset_P1c_size_199.pdf}
-       \caption{Exp-Gaussian on P1c.}
+       \caption{Exp-Gaussian.}
        \label{fig:EXP_P1c}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/conf_mtx_QD_ML_dataset_P1c_size_199.pdf}
-       \caption{QDA on P1c.}
+       \caption{QDA.}
        \label{fig:QDA_EXP_P1c}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex1/samples_QD_EXP_ML_dataset_P1c_size_199.pdf}
@@ -506,7 +506,7 @@ Figure \ref{fig:ex13P1c} shows the results for testing the classifier on P1c dat
 \caption{Bayes' classifier with class conditionals as Gaussian and Exponential; and both class conditionals as Gaussians on P1c dataset.}
 \label{fig:ex13P1c}
 \end{figure}
-{\it Inferences}: The performance of the classifier with exponential distribution is poor. The accuracy of classification into class $0$ with Gaussian class conditional is $100\%$ in comparison to the accuracy of classification with both class conditionals as Gaussians and with GMM. However, the accuracy of classification with the exponential distribution is very poor and comparable to a coin-toss classifier. This is expected as the mean of class $1$ is at $[3\; 6]^{\TT}$ and since the class is exponential, the samples are not drawn from a bell-shape. The samples are drawn around $[0\; 0]^{\TT}$ with high probability.
+\underline {\it \bfseries Inferences}: The performance of the classifier with exponential distribution is poor. The accuracy of classification into class $0$ with Gaussian class conditional is $100\%$ in comparison to the accuracy of classification with both class conditionals as Gaussians and with GMM. However, the accuracy of classification with the exponential distribution is very poor and comparable to a coin-toss classifier. This is expected as the mean of class $1$ is at $[3\; 6]^{\TT}$ and since the class is exponential, the samples are not drawn from a bell-shape. The samples are drawn around $[0\; 0]^{\TT}$ with high probability. \\
 
 The exponential distribution is not a good model for the class conditional, in this case. This is apparent as we know a priori, the class conditionals are Gaussian. Model mismatch in the modelling of the class conditional explains the poor performance of the classifiers.
 
@@ -518,70 +518,70 @@ The exponential distribution is not a good model for the class conditional, in t
 
 \problem{Problem (2) Bayes' Classifier with Gaussian Class Conditionals}
 \label{prob:2}
-Let the class conditional distributions be modelled to be multivariate Gaussians. In the training phase, the unknown means and covariances of the Gaussians are estimated from the training data. The model is identical to the setting in Problem \ref{prob:1.1}.1 and the updates for the unknown means and covariances are identical to (\ref{eq:mleGaussian}).
+Let the class conditional distributions be modelled to be multivariate Gaussians. In the training phase, the unknown means and covariances of the Gaussians are estimated from the training data. \\
 
-The classifiers are trained on three datasets (P3a, P3b, P3c) with varying training sizes. The trained classifiers are tested on the full test dataset and the accuracies in confusion matrices are plotted. The classifier is compared with the nearest-neighbour classifier.
+\underline {\it \bfseries Implementation}: The model is identical to the setting in Problem \ref{prob:1.1}.1 and the updates for the unknown means and covariances are identical to (\ref{eq:mleGaussian}). The classifiers are trained on three datasets (P2a, P2b, P2c) with varying training sizes. The trained classifiers are tested on the full test dataset and the accuracies in confusion matrices are plotted. The classifier is compared with the nearest-neighbour classifier. \\
 
-Figure \ref{fig:ex2P2a} shows the results for testing the classifier on P2a dataset. Figure \ref{fig:QDA_rr20_P2a_50} \ref{fig:QDA_rr20_P2a_100} \ref{fig:QDA_rr20_P2a_300} \ref{fig:QDA_rr20_P2a_999} depicts the accuracies in confusion matrices for the Bayes' classifier, Figures \ref{fig:KNN_rr20_P2a_50} \ref{fig:KNN_rr20_P2a_100} \ref{fig:KNN_rr20_P2a_300} \ref{fig:KNN_rr20_P2a_999} depicts the accuracies in confusion matrices for the nearest-neighbour classifier. Figures \ref{fig:ex2P2b} and \ref{fig:ex2P2c} shows the corresponding results for datasets P2b and P2c, respectively. All the datasets have the same means for the classes, $\bmu_{0} = \boldsymbol{0}$ and $\bmu_{1} = \mathbbm{1}$, but different covariances.
+\underline {\it \bfseries Results}: Figure \ref{fig:ex2P2a} shows the results for testing the classifier on P2a dataset. Figure \ref{fig:QDA_rr20_P2a_50} \ref{fig:QDA_rr20_P2a_100} \ref{fig:QDA_rr20_P2a_300} \ref{fig:QDA_rr20_P2a_999} depicts the accuracies in confusion matrices for the Bayes' classifier, Figures \ref{fig:KNN_rr20_P2a_50} \ref{fig:KNN_rr20_P2a_100} \ref{fig:KNN_rr20_P2a_300} \ref{fig:KNN_rr20_P2a_999} depicts the accuracies in confusion matrices for the nearest-neighbour classifier. Figures \ref{fig:ex2P2b} and \ref{fig:ex2P2c} shows the corresponding results for datasets P2b and P2c, respectively. All the datasets have the same means for the classes, $\bmu_{0} = \boldsymbol{0}$ and $\bmu_{1} = \mathbbm{1}$, but different covariances. \\
 
-{\it Inferences on P2a}: The covariance matrices of the classes are both equal to the identity matrix. Hence, the discriminability in the data is sufficient and the classifier performs well with sufficient training samples. $10$ samples are insufficient to completely capture the model and the Bayes' classifier performs poorly. The estimated means are not accurate and hence the class conditionals are not accurate. The nearest-neighbour classifier performs well with $10$ samples. With few training samples, the nearest-neighbour classifier is more reliable than the Bayes' classifier. As the number of training samples increase from $10$ to $50$. $100$ and $300$, the performance of the Bayes' classifier beats nearest-neighbour, as in these cases, the MLE converges to the true values. The error in nearest-neighbour classification is at most twice the error in Bayes' classifier, in most cases.
+\underline {\it \bfseries Inferences on P2a}: The covariance matrices of the classes are both equal to the identity matrix. Hence, the discriminability in the data is sufficient and the classifier performs well with sufficient training samples. $10$ samples are insufficient to completely capture the model and the Bayes' classifier performs poorly. The estimated means are not accurate and hence the class conditionals are not accurate. The nearest-neighbour classifier performs well with $10$ samples. With few training samples, the nearest-neighbour classifier is more reliable than the Bayes' classifier. As the number of training samples increase from $10$ to $50$, $100$ and $300$, the performance of the Bayes' classifier beats nearest-neighbour, as in these cases, the MLE converges to the true values. The error in nearest-neighbour classification is at most twice the error in Bayes' classifier, in most cases. \\
 
-{\it Inferences on P2b}: The covariance matrices of the classes are both equal to three times the identity matrix. Hence, the discriminability in the data is insufficient. The data from either of the classes overlap into the other class. The classifiers perform poorly in relation to P2a, where the discriminability is better. The number of samples taken in the range of $50$-$100$ are not sufficient of risk minimisation for the data with overlapping classes. In this range of training samples, the nearest neighbour classifier performs better than the Bayes' classifier. As the number of training samples increases to the full training data size, the estimation accuracy improves and the accuracy of the classifier improves. Again, when the estimation of the parameters improves, the error in the nearest-neighbour classifier is less than twice the error in Bayes' classifier.
+\underline {\it \bfseries Inferences on P2b}: The covariance matrices of the classes are both equal to three times the identity matrix. Hence, the discriminability in the data is insufficient. The data from either of the classes overlap into the other class. The classifiers perform poorly in relation to P2a, where the discriminability is better. The number of samples taken in the range of $50$-$100$ are not sufficient of risk minimisation for the data with overlapping classes. In this range of training samples, the nearest neighbour classifier performs better than the Bayes' classifier. As the number of training samples increases to the full training data size, the estimation accuracy improves and the accuracy of the classifier improves. Again, when the estimation of the parameters improves, the error in the nearest-neighbour classifier is less than twice the error in Bayes' classifier. \\
 \begin{figure}[!htbp]
 \centering
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_50.pdf}
-       \caption{QDA on P2a, size $50$.}
+       \caption{QDA, size $50$.}
        \label{fig:QDA_rr20_P2a_50}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2a_size_50.pdf}
-       \caption{KNN on P2a, size $50$.}
+       \caption{KNN, size $50$.}
        \label{fig:KNN_rr20_P2a_50}
     \end{subfigure}
 \\  
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_100.pdf}
-       \caption{QDA on P2a, size $100$.}
+       \caption{QDA, size $100$.}
        \label{fig:QDA_rr20_P2a_100}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2a_size_100.pdf}
-       \caption{KNN on P2a, size $100$.}
+       \caption{KNN, size $100$.}
        \label{fig:KNN_rr20_P2a_100}
     \end{subfigure}
 \\
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_300.pdf}
-       \caption{QDA on P2a, size $300$.}
+       \caption{QDA, size $300$.}
        \label{fig:QDA_rr20_P2a_300}
     \end{subfigure}
-\quad    
+\quad \quad   
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2a_size_300.pdf}
-       \caption{KNN on P2a, size $300$.}
+       \caption{KNN, size $300$.}
        \label{fig:KNN_rr20_P2a_300}
     \end{subfigure}
 \\
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2a_size_999.pdf}
-       \caption{QDA on P2a, size $999$.}
+       \caption{QDA, size $999$.}
        \label{fig:QDA_rr20_P2a_999}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2a_size_999.pdf}
-       \caption{KNN on P2a, size $999$.}
+       \caption{KNN, size $999$.}
        \label{fig:KNN_rr20_P2a_999}
     \end{subfigure}
 \caption{Bayes classifier and Nearest neighbour classification on P2a dataset.}
@@ -593,56 +593,56 @@ Figure \ref{fig:ex2P2a} shows the results for testing the classifier on P2a data
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_50.pdf}
-       \caption{QDA on P2b, size $50$.}
+       \caption{QDA, size $50$.}
        \label{fig:QDA_rr20_P2b_50}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2b_size_50.pdf}
-       \caption{KNN on P2b, size $50$.}
+       \caption{KNN, size $50$.}
        \label{fig:KNN_rr20_P2b_50}
     \end{subfigure}
 \\  
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_100.pdf}
-       \caption{QDA on P2b, size $100$.}
+       \caption{QDA, size $100$.}
        \label{fig:QDA_rr20_P2b_100}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2b_size_100.pdf}
-       \caption{KNN on P2b, size $100$.}
+       \caption{KNN, size $100$.}
        \label{fig:KNN_rr20_P2b_100}
     \end{subfigure}
 \\
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_300.pdf}
-       \caption{QDA on P2b, size $300$.}
+       \caption{QDA, size $300$.}
        \label{fig:QDA_rr20_P2b_300}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2b_size_300.pdf}
-       \caption{KNN on P2b, size $300$.}
+       \caption{KNN, size $300$.}
        \label{fig:KNN_rr20_P2b_300}
     \end{subfigure}
 \\
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2b_size_999.pdf}
-       \caption{QDA on P2b, size $999$.}
+       \caption{QDA, size $999$.}
        \label{fig:QDA_rr20_P2b_999}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2b_size_999.pdf}
-       \caption{KNN on P2b, size $999$.}
+       \caption{KNN, size $999$.}
        \label{fig:KNN_rr20_P2b_999}
     \end{subfigure}
 \caption{Bayes classifier and Nearest neighbour classification on P2b dataset.}
@@ -654,62 +654,62 @@ Figure \ref{fig:ex2P2a} shows the results for testing the classifier on P2a data
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_50.pdf}
-       \caption{QDA on P2c, size $50$.}
+       \caption{QDA, size $50$.}
        \label{fig:QDA_rr20_P2c_50}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2c_size_50.pdf}
-       \caption{KNN on P2c, size $50$.}
+       \caption{KNN, size $50$.}
        \label{fig:KNN_rr20_P2c_50}
     \end{subfigure}
 \\  
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_100.pdf}
-       \caption{QDA on P2c, size $100$.}
+       \caption{QDA, size $100$.}
        \label{fig:QDA_rr20_P2c_100}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2c_size_100.pdf}
-       \caption{KNN on P2c, size $100$.}
+       \caption{KNN, size $100$.}
        \label{fig:KNN_rr20_P2c_100}
     \end{subfigure}
 \\
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_300.pdf}
-       \caption{QDA on P2c, size $300$.}
+       \caption{QDA, size $300$.}
        \label{fig:QDA_rr20_P2c_300}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2c_size_300.pdf}
-       \caption{KNN on P2c, size $300$.}
+       \caption{KNN, size $300$.}
        \label{fig:KNN_rr20_P2c_300}
     \end{subfigure}
 \\
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_QD_ML_dataset_P2c_size_999.pdf}
-       \caption{QDA on P2c, size $999$.}
+       \caption{QDA, size $999$.}
        \label{fig:QDA_rr20_P2c_999}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex2/conf_mtx_KNN_dataset_P2c_size_999.pdf}
-       \caption{KNN on P2c, size $999$.}
+       \caption{KNN, size $999$.}
        \label{fig:KNN_rr20_P2c_999}
     \end{subfigure}
 \caption{Bayes classifier and Nearest neighbour classification on P2c dataset.}
 \label{fig:ex2P2c}
 \end{figure}
-{\it Inferences on P2c}: The covariance matrices of the classes are both random matrices with ones on the diagonal. The data in the classes can have different orientations, in which case the discriminability in the data is large. The classifiers perform well suggesting that classes indeed have different orientations. In this case, the classifier performs well with $99\%$ accuracy with training size as low as $100$ samples. The nearest-neighbour classifier does perform better in the case with $50$ training samples. With larger training size, the error in classification using nearest-neighbour classifier is around twice the error in Bayes' classifier.
+\underline {\it \bfseries Inferences on P2c}: The covariance matrices of the classes are both random matrices with ones on the diagonal. The data in the classes can have different orientations, in which case the discriminability in the data is large. The classifiers perform well suggesting that classes indeed have different orientations. In this case, the classifier performs well with $99\%$ accuracy with training size as low as $100$ samples. The nearest-neighbour classifier does perform better in the case with $50$ training samples. With larger training size, the error in classification using nearest-neighbour classifier is around twice the error in Bayes' classifier.
 
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -719,44 +719,52 @@ Figure \ref{fig:ex2P2a} shows the results for testing the classifier on P2a data
 
 \problem{Problem (3) Bayes' Classifier Trained using Gaussian Mixture Model}
 \label{prob:3}
+Let the class conditionals be modelled as a mixture of Gaussians identical to (\ref{eq:gmmModel}). Here, each class is modelled as a mixture of Gaussians, i.e., the learning is supervised. In the training phase, the unknown weights, means and covariances are estimated from the training samples using the EM algorithm, identical to (\ref{eq:estep}) and (\ref{eq:mstep}). \\
 
+\underline {\it \bfseries Implementation}: The classifiers are trained on two datasets (P3a, P3b) with the full set of training samples. The trained classifiers are tested on the full test dataset and the accuracies in the confusion matrices are plotted. The classifier is compared with the Bayes' classifier with Gaussian class conditional model and the nearest-neighbour classifier. \\
+
+\underline {\it \bfseries Results}: Figure \ref{fig:ex3P3a} shows the results for testing the classifiers on P3a dataset. Figure \ref{fig:KNN_P3a} shows the accuracies in the confusion matrix for the nearest-neighbour classifier. Figure \ref{fig:QDA_P3a} and \ref{fig:DF_QDA_P3a} shows the accuracies in the confusion matrix for the Bayes' classifier with Gaussian class conditionals and the learnt class conditionals, the samples and the discriminant function, respectively. Figure \ref{fig:GMM_P3a} and \ref{fig:GMM_DF_P3a} shows the accuracies in the confusion matrix for the Bayes' classifier with Gaussian mixture class conditionals and the learnt class conditionals and the samples, respectively. Figure \ref{fig:ex3P3b} shows the corresponding results on P3b dataset. \\
+
+\underline {\it \bfseries Inferences on P3a}: The true distributions are indeed a mixture of two Gaussians with means $\{0,4\}$ and $\{8,12\}$. The variances are of the same order. The discriminability in the data is large. The Bayes' classifier in both cases, with Gaussian class conditionals and Gaussian mixture class conditionals performs identically. The Bayes' classifier with Gaussian class conditionals in $\rr$ is a threshold based classifier. The priors are approximately equal to half and the variances are the same. Hence, the threshold passes through the point of intersection of the PDFs of the class conditionals as in Figure \ref{fig:DF_QDA_P3a}. In the case of Bayes' classifier with Gaussian mixture class conditionals, it can be observed that the mixture of Gaussians in class $1$ (green samples in Figure \ref{fig:DF_QDA_P3a}) collapses into a single Gaussian, in a drawback dubbed {\it mode collapse}. However, since the classifier in $1$D is only a threshold based classifier, the performance of the Bayes' classifiers are similar. The nearest-neighbour classifier performs well where the errors are not larger than twice the error in the Bayes' classifier. \\
+
+\underline {\it \bfseries Inferences on P3b}: The true distributions are indeed a mixture of two Gaussians with means $\{0,8\}$ and $\{4,12\}$. The variances are of the same order. The Bayes' classifier with Gaussian class conditionals has largely overlapping Gaussians with variances $\{18, 20\}$ which is $4$ times the true variance. The threshold is a bisector that is weighted by the priors. In the Bayes' classifier with Gaussian mixtures as class conditionals, since the mean of one component of the Gaussian mixture in one class is between the mean of the components in the other class, the mixture component model has low discriminability. The overall performance of any of the classifiers is poor. The Bayes' classifier with Gaussian mixture class conditionals performs slightly better than the Bayes' classifier with Gaussian class conditionals as it represents the true data. Mode collapse in class $1$ is still observed. The nearest neighbour classifier performs as expected with bounded errors. \\
 \begin{figure}[!htbp]
 \centering
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex3/conf_mtx_KNN_dataset_P3a_size_199.pdf}
-       \caption{KNN on P3a.}
+       \caption{KNN.}
        \label{fig:KNN_P3a}
     \end{subfigure}
-\quad    
+\quad \quad    
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex3/conf_mtx_QD_ML_dataset_P3a_size_199.pdf}
-       \caption{QDA on P3a.}
+       \caption{QDA.}
        \label{fig:QDA_P3a}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex3/samples_QD_ML_dataset_P3a_size_199.pdf}
-       \caption{Samples. QDA.}
+       \caption{Samples, QDA.}
        \label{fig:DF_QDA_P3a}
     \end{subfigure}
 \\
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex3/conf_mtx_GMM_dataset_P3a_size_199.pdf}
-       \caption{GMM on P3a.}
+       \caption{GMM.}
        \label{fig:GMM_P3a}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex3/samples_GMM_EM_dataset_P3a_size_199.pdf}
        \caption{Samples, GMM.}
        \label{fig:GMM_DF_P3a}
     \end{subfigure}
-\caption{.}
+\caption{Bayes classifier with Gaussians, GMM and nearest neighbour on P3a dataset.}
 \label{fig:ex3P3a}
 \end{figure}
 
@@ -765,17 +773,17 @@ Figure \ref{fig:ex2P2a} shows the results for testing the classifier on P2a data
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex3/conf_mtx_KNN_dataset_P3b_size_199.pdf}
-       \caption{KNN on P3b.}
+       \caption{KNN.}
        \label{fig:KNN_P3b}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex3/conf_mtx_QD_ML_dataset_P3b_size_199.pdf}
-       \caption{QDA on P3b.}
+       \caption{QDA.}
        \label{fig:QDA_P3b}
     \end{subfigure}
-\quad    
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex3/samples_QD_ML_dataset_P3b_size_199.pdf}
@@ -786,17 +794,17 @@ Figure \ref{fig:ex2P2a} shows the results for testing the classifier on P2a data
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex3/conf_mtx_GMM_dataset_P3b_size_199.pdf}
-       \caption{GMM on P3b.}
+       \caption{GMM.}
        \label{fig:GMM_P3b}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
        \includegraphics[width=1.8in]{../results/ex3/samples_GMM_EM_dataset_P3b_size_199.pdf}
        \caption{Samples, GMM.}
        \label{fig:GMM_DF_P3b}
     \end{subfigure}
-\caption{.}
+\caption{Bayes classifier with Gaussians, GMM and nearest neighbour on P3b dataset.}
 \label{fig:ex3P3b}
 \end{figure}
 
@@ -806,29 +814,86 @@ Figure \ref{fig:ex2P2a} shows the results for testing the classifier on P2a data
 
 \section{Naive Bayes' Classifier for Document Classification}
 \label{sec:docClassification}
+The bag of words (BoG) model considers words to be binary features $\bx \in \{0,1\}^{d}$ with $x_{i} = 1$ if the $i$th word is present, and $x_{i} = 0$ otherwise. Alternatively, the TF-IDF models are dubbed to be better features to represent documents. Let $g_{ij}$ denote the number of times word $i$ appears in document $j$. The term frequency is defined as $\mathrm{TF}_{ij} = \frac{g_{ij}}{\max g_{ij}}$. The inverse document frequency of word $i$ is defined as $\mathrm{IDF}_{i} = \log_{2} \left( \frac{N}{n_{i}} \right)$, where $N$ is the total number of documents and $n_{i}$ is the number of times the word $i$ appears. The TF-IDF of document $j$ is the vector whose $i$th entry is given by $\mathrm{TF}_{ij} \mathrm{IDF}_{i}$. \\
+
+\underline {\it \bfseries Implementation}: The naive Bayes' classifier assumes the joint class conditional to be independent in $x_{i}$ i.e.,
+\begin{equation}
+	f(\bx; y=c, \btheta) = \prod_{j=1}^{d} f(x_{j}; y=c, \theta_{jc}),
+\label{eq:baiveBayes}
+\end{equation}
+where, which is either the BoG features or TF-IDF, and  $f(x_{j}; y=c, \theta_{jc})$ is a Bernoulli random variable with parameter $\theta_{jc}$. The parameter can be estimated using maximum likelihood estimation:
+\begin{equation}
+	\theta_{jc} = \frac{1}{n} \sum_{y^{(i)}=c} x_{i}^{(j)}, \; c=0,1,
+\label{eq:bogMle}
+\end{equation}
+where $n$ is the number of samples in class $c$. The \texttt{sentiment analysis} dataset is used for training and testing. The training-testing split is taken to be $30\%$, $50\%$ and $80\%$, and the accuracies in the confusion matrices are plotted. The classifiers are trained and tested using the \texttt{scikit learn} toolbox in Python. \\
+
+\underline {\it \bfseries Results}: Figure \ref{fig:ex4_30} shows the accuracies in the confusion matrices with training a naive Bayes' classifier using the BoG model (Figure \ref{fig:bog_50}) and TF-IDF (Figure \ref{fig:tfidf_50}) with $50\%$ train-test split; and Figure \ref{fig:ex4_50} and \ref{fig:ex4_80} shows the corresponding results with $50\%$ and $80\%$ train-test splits. \\
+
+\underline {\it \bfseries Inferences}: In the case with training using as few as $30\%$ training samples, it can be seen that the TF-IDF features does not perform as well as the BoG model. With higher training samples $50\%$ and $80\%$, the TF-IDF model performs better than the BoG model. In both cases, with BoG model and TF-IDF features, it can be seen that the accuracy improves with a larger training dataset. With a fixed training size, it can be seen that the accuracy improves with using TF-IDF rather than using the BoG model. \\
+\begin{figure}[!htbp]
+\centering
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex4/conf_mtx_bog_train_test_split_0.7.pdf}
+       \caption{BoG model with $30\%$ training data.}
+       \label{fig:bog_30}
+    \end{subfigure}
+\quad \quad
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex4/conf_mtx_tfidf_train_test_split_0.7.pdf}
+       \caption{TF-IDF features with $30\%$ training data.}
+       \label{fig:tfidf_50}
+    \end{subfigure}
+\caption{Document classification using naive Bayes' classifiers with BoG model and TF-IDF features, $30\%$ train-test split.}
+\label{fig:ex4_30}
+\end{figure}
 
 \begin{figure}[!htbp]
 \centering
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.8in]{../results/ex4/conf_mtx_bog.pdf}
-       \caption{Bag of Words.}
-       \label{fig:bog}
+       \includegraphics[width=1.8in]{../results/ex4/conf_mtx_bog_train_test_split_0.5.pdf}
+       \caption{BoG model with $50\%$ training data.}
+       \label{fig:bog_50}
     \end{subfigure}
-\quad
+\quad \quad
     \begin{subfigure}[!htbp]{0.24\textwidth}
        \centering
-       \includegraphics[width=1.8in]{../results/ex4/conf_mtx_tfidf.pdf}
-       \caption{TF-IDF.}
-       \label{fig:tfidf}
+       \includegraphics[width=1.8in]{../results/ex4/conf_mtx_tfidf_train_test_split_0.5.pdf}
+       \caption{TF-IDF features with $50\%$ training data.}
+       \label{fig:tfidf_50}
     \end{subfigure}
-\caption{.}
-\label{fig:ex4}
+\caption{Document classification using naive Bayes' classifiers with BoG model and TF-IDF features, $50\%$ train-test split.}
+\label{fig:ex4_50}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex4/conf_mtx_bog_train_test_split_0.2.pdf}
+       \caption{BoG model with $80\%$ training data.}
+       \label{fig:bog_80}
+    \end{subfigure}
+\quad \quad
+    \begin{subfigure}[!htbp]{0.24\textwidth}
+       \centering
+       \includegraphics[width=1.8in]{../results/ex4/conf_mtx_tfidf_train_test_split_0.2.pdf}
+       \caption{TF-IDF features with $80\%$ training data.}
+       \label{fig:tfidf_80}
+    \end{subfigure}
+\caption{Document classification using naive Bayes' classifiers with BoG model and TF-IDF features, $80\%$ train-test split.}
+\label{fig:ex4_80}
 \end{figure}
 
 
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
 % ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+\section{Code Repository}
+The Python codes to reproduce the results can be found in the GitHub repository \url{https://github.com/kamath-abhijith/Bayes_Classifier}. Use \texttt{requirements.txt} to install the dependencies.
 
 
 \end{document} 

@@ -6,7 +6,7 @@ AUTHOR: ABIJITH J. KAMATH
 abijithj@iisc.ac.in
 
 '''
-
+  
 # %% LOAD LIBRARIES
 
 import os
@@ -52,8 +52,9 @@ def fit_NBclassifier(trainset, trainlabel):
 
 data = pd.read_csv(r'data/sentiment_analysis.csv')
 
+test_train_ratio = 0.7
 corpus_train, corpus_test, label_train, label_test = train_test_split( \
-    data['text'].to_list(), data['class'].to_list(), test_size=0.2)
+    data['text'].to_list(), data['class'].to_list(), test_size=test_train_ratio)
 
 method = 'tfidf'
 # method = 'bog'
@@ -87,7 +88,7 @@ labels = sorted(set(label_predicted))
 os.makedirs('./results/ex4', exist_ok=True)
 path = './results/ex4/'
 
-save_res = path + 'conf_mtx_' + method
+save_res = path + 'conf_mtx_' + method + '_train_test_split_' + str(test_train_ratio)
 
 bayes_tools.plot_confusion_matrix(conf_mat, save=save_res)
 

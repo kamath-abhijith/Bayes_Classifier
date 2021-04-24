@@ -34,7 +34,7 @@ plt.rcParams.update({
 
 # %% IMPORT DATA
 
-dataset = 'P3a'
+dataset = 'P3b'
 train_data = np.loadtxt('./data/'+dataset+'_train_data.txt', skiprows=1)
 test_data = np.loadtxt('./data/'+dataset+'_test_data.txt', skiprows=1)
 
@@ -48,7 +48,7 @@ np.random.seed(34)
 
 num_samples = train_data.shape[0]
 training_size = num_samples
-force_train = True
+force_train = False
 
 if os.path.isfile(path + 'model_QD_ML_dataset_' + dataset + '_size_' + \
     str(training_size) + '.pkl') and force_train==False:
