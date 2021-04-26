@@ -12,6 +12,7 @@ abijithj@iisc.ac.in
 
 import os
 import pickle
+import argparse
 import numpy as np
 
 from tqdm import tqdm
@@ -21,6 +22,21 @@ from matplotlib import style
 from matplotlib import rcParams
 
 import bayes_tools
+
+# %% PARSE ARGUMENTS
+parser = argparse.ArgumentParser(
+    description = "BAYES CLASSIFICATION WITH GAUSSIAN CLASS-CONDITIONALS ON TOY-GAUSSIANS IN 2D"
+)
+
+parser.add_argument('--dataset', help="dataset for training and testing", default='P1c')
+parser.add_argument('--training_size', help="size of training set", type=int, default=75)
+parser.add_argument('--force_train', help="force training", type=bool, default=False)
+
+args = parser.parse_args()
+
+dataset = args.dataset
+training_size = args.training_size
+force_train = args.force_train
 
 # %% PLOT SETTINGS
 
@@ -34,7 +50,7 @@ plt.rcParams.update({
 
 # %% IMPORT DATA
 
-dataset = 'P1c'
+# dataset = 'P1c'
 train_data = np.loadtxt('./data/'+dataset+'_train_data_2D.txt', delimiter=',', skiprows=1)
 test_data = np.loadtxt('./data/'+dataset+'_test_data_2D.txt', delimiter=',', skiprows=1)
 
@@ -46,8 +62,8 @@ path = './models/ex1/'
 # SET TRAINING PARAMETERS
 
 num_samples = train_data.shape[0]
-training_size = 199
-force_train = True
+# training_size = 199
+# force_train = True
 
 if os.path.isfile(path + 'model_QD_ML_dataset_' + dataset + '_size_' + \
     str(training_size) + '.pkl') and force_train==False:
@@ -91,7 +107,7 @@ bayes_tools.plot_confidence_ellipse2D(model["means"][0], model["covs"][0],
 bayes_tools.plot_confidence_ellipse2D(model["means"][1], model["covs"][1],
     nstd=3, ax=ax, colour='green')
 bayes_tools.plot_decisionboundary2D(model["means"], model["covs"],
-    model["priors"], ax=ax, num_points=500, show=True, save=save_res)
+    model["priors"], ax=ax, num_points=500, show=False, save=save_res)
 
 # %% TESTING
 
@@ -102,6 +118,6 @@ confusion_mtx = bayes_tools.test_gaussian_conditionals(test_data,
 
 save_res = path + 'conf_mtx_QD_ML_dataset_' + dataset + '_size_' + str(training_size)
 
-bayes_tools.plot_confusion_matrix(confusion_mtx, save=save_res)
+bayes_tools.plot_confusion_matrix(confusion_mtx, show=False, save=save_res)
 
 # %%

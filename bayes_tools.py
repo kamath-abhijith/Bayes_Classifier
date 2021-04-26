@@ -126,9 +126,11 @@ def plot_confusion_matrix(data, ax=None, xaxis_label=r'PREDICTED CLASS',
     plt.xlabel(xaxis_label)
     plt.ylabel(yaxis_label)
     plt.title(title_text)
+
+    if save:
+        plt.savefig(save + '.pdf', format='pdf')
+
     if show:
-        if save:
-            plt.savefig(save + '.pdf', format='pdf')
         plt.show()
 
     return
@@ -193,9 +195,10 @@ def plot_decisionboundary2D(means, covs, priors, ax=None, colour='black',
     zz = predict_gaussian_conditionals(data_grid, means, covs, priors).reshape(xx.shape)
 
     plt.contour(xx, yy, zz, [0.5], linewidths=line_width, colors=colour)
+    if save:
+        plt.savefig(save + '.pdf', format='pdf')
+    
     if show:
-        if save:
-            plt.savefig(save + '.pdf', format='pdf')
         plt.show()
 
     return
